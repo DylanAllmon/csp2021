@@ -1,471 +1,313 @@
 
 <!DOCTYPE html>
-<html class="scripts-not-loaded" dir="ltr"   lang="en">
+
+
+<html no_gl="true" lang="en" class="dcg-calculator-api-container">
 <head>
-  <meta charset="utf-8">
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link rel="preload" href="/dist/fonts/lato/extended/Lato-Regular-bd03a2cc27.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/dist/fonts/lato/extended/Lato-Bold-cccb897485.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/dist/fonts/lato/extended/Lato-Italic-4eb103b4d1.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" media="screen" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/no_variables/bundles/lato_extended-f5a83bde37.css" />
-    <script>if (navigator.userAgent.match(/(MSIE|Trident\/)/)) location.replace('/ie-is-not-supported.html')</script>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+  <!--chrome=1 enables chrome frame; IE=edge specifies that IE should run in the highest mode available to that version of IE.-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+  <meta name="Description" content="Explore math with our beautiful, free online graphing calculator. Graph functions, plot points, visualize algebraic equations, add sliders, animate graphs, and more." />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:title" content="Desmos | Graphing Calculator" />
+  <meta property="og:site_name" content="Desmos" />
+  <meta property="og:image" content="https://s3.amazonaws.com/desmos/img/calc_thumb.png" />
+  <link rel="image_src" href="https://s3.amazonaws.com/desmos/img/calc_thumb.png" />
   
-  <link rel="shortcut icon" type="image/x-icon" href="https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico" />
-  <link rel="apple-touch-icon" href="https://du11hjcvx0uqb.cloudfront.net/dist/images/apple-touch-icon-585e5d997d.png" />
-  <link rel="stylesheet" media="all" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/b576aefe4211b8a72d94bc56b72349ae/variables-8391c84da435c9cfceea2b2b3317ff66.css" />
-  <link rel="stylesheet" media="all" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/responsive_layout_normal_contrast/bundles/common-28740f316f.css" />
-  <meta name="apple-itunes-app" content="app-id=480883488">
-<link rel="manifest" href="/web-app-manifest/manifest.json">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#008EE2">
-  <link rel="stylesheet" media="all" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/responsive_layout_normal_contrast/bundles/react_todo_sidebar-1ea6c57ca3.css" />
-<link rel="stylesheet" media="all" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/responsive_layout_normal_contrast/bundles/dashboard-6a34dfd512.css" />
-<link rel="stylesheet" media="all" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/responsive_layout_normal_contrast/bundles/dashboard_card-89541c56ac.css" />
   
-  <script>
-    function _earlyClick(e){
-      var c = e.target
-      while (c && c.ownerDocument) {
-        if (c.getAttribute('href') == '#' || c.getAttribute('data-method')) {
-          if (!e.defaultPrevented) {
-            e.preventDefault()
-          }
-          (_earlyClick.clicks = _earlyClick.clicks || []).push(c)
-          break
-        }
-        c = c.parentNode
-      }
+  
+  
+    
+      <link rel="canonical" href="https://www.desmos.com/calculator" />
+    
+  
+    
+      <link rel="alternate" hreflang="de" href="https://www.desmos.com/calculator?lang=de" />
+    
+  
+    
+      <link rel="alternate" hreflang="es" href="https://www.desmos.com/calculator?lang=es" />
+    
+  
+    
+      <link rel="alternate" hreflang="et" href="https://www.desmos.com/calculator?lang=et" />
+    
+  
+    
+      <link rel="alternate" hreflang="fr" href="https://www.desmos.com/calculator?lang=fr" />
+    
+  
+    
+      <link rel="alternate" hreflang="id" href="https://www.desmos.com/calculator?lang=id" />
+    
+  
+    
+      <link rel="alternate" hreflang="it" href="https://www.desmos.com/calculator?lang=it" />
+    
+  
+    
+      <link rel="alternate" hreflang="ja" href="https://www.desmos.com/calculator?lang=ja" />
+    
+  
+    
+      <link rel="alternate" hreflang="ko" href="https://www.desmos.com/calculator?lang=ko" />
+    
+  
+    
+      <link rel="alternate" hreflang="nl" href="https://www.desmos.com/calculator?lang=nl" />
+    
+  
+    
+      <link rel="alternate" hreflang="pl" href="https://www.desmos.com/calculator?lang=pl" />
+    
+  
+    
+      <link rel="alternate" hreflang="pt-BR" href="https://www.desmos.com/calculator?lang=pt-BR" />
+    
+  
+    
+      <link rel="alternate" hreflang="ru" href="https://www.desmos.com/calculator?lang=ru" />
+    
+  
+    
+      <link rel="alternate" hreflang="sv-SE" href="https://www.desmos.com/calculator?lang=sv-SE" />
+    
+  
+    
+      <link rel="alternate" hreflang="th" href="https://www.desmos.com/calculator?lang=th" />
+    
+  
+    
+      <link rel="alternate" hreflang="tr" href="https://www.desmos.com/calculator?lang=tr" />
+    
+  
+    
+      <link rel="alternate" hreflang="uk" href="https://www.desmos.com/calculator?lang=uk" />
+    
+  
+    
+      <link rel="alternate" hreflang="vi" href="https://www.desmos.com/calculator?lang=vi" />
+    
+  
+    
+      <link rel="alternate" hreflang="zh-CN" href="https://www.desmos.com/calculator?lang=zh-CN" />
+    
+  
+    
+      <link rel="alternate" hreflang="zh-TW" href="https://www.desmos.com/calculator?lang=zh-TW" />
+    
+  
+    
+      <link rel="alternate" hreflang="en" href="https://www.desmos.com/calculator" />
+    
+  
+    
+      <link rel="alternate" hreflang="x-default" href="https://www.desmos.com/calculator" />
+    
+  
+
+
+  <link rel="stylesheet" href="/assets/build/calculator_desktop-7d0b592f6d5a37f5e67535ce6a8f413121b413e3.css" />
+
+  <title>Graphing Calculator</title>
+
+  <link rel="apple-touch-icon-precomposed" href="/assets/img/apple-touch-icon-precomposed.png"> <!-- 57x57 -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/img/apple-touch-icon-72x72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/assets/img/apple-touch-icon-76x76-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/img/apple-touch-icon-114x114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/assets/img/apple-touch-icon-120x120-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/img/apple-touch-icon-144x144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/img/apple-touch-icon-152x152-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/assets/img/apple-touch-icon-180x180-precomposed.png">
+  <link rel="icon" sizes="192x192" href="/assets/img/touch-icon-192x192.png"> <!-- for Chrome on Android -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <style type='text/css'>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  @-moz-keyframes dcg-loading-pulse {
+    0% {
+      opacity: 0;
     }
-    document.addEventListener('click', _earlyClick)
-  </script>
+    20% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 0;
+      -moz-transform: scale(1.5, 1.5);
+    }
+    100% {
+      opacity: 0;
+      -moz-transform: scale(1.5, 1.5);
+    }
+  }
+  @-webkit-keyframes dcg-loading-pulse {
+    0% {
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 0;
+      -webkit-transform: scale(1.5, 1.5);
+    }
+    100% {
+      opacity: 0;
+      -webkit-transform: scale(1.5, 1.5);
+    }
+  }
+  @-o-keyframes dcg-loading-pulse {
+    0% {
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 0;
+      -o-transform: scale(1.5, 1.5);
+    }
+    100% {
+      opacity: 0;
+      -o-transform: scale(1.5, 1.5);
+    }
+  }
+  @keyframes dcg-loading-pulse {
+    0% {
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 0;
+      transform: scale(1.5, 1.5);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.5, 1.5);
+    }
+  }
 
+  .dcg-loading-div-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #FFF;
+    z-index: 1000;
+  }
 
-  <script>
-    INST = {"environment":"production","logPageViews":true,"editorButtons":[]};
-    ENV = {"ASSET_HOST":"https://du11hjcvx0uqb.cloudfront.net","active_brand_config_json_url":"https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/b576aefe4211b8a72d94bc56b72349ae/variables-8391c84da435c9cfceea2b2b3317ff66.json","url_to_what_gets_loaded_inside_the_tinymce_editor_css":["https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/b576aefe4211b8a72d94bc56b72349ae/variables-8391c84da435c9cfceea2b2b3317ff66.css","https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/responsive_layout_normal_contrast/bundles/what_gets_loaded_inside_the_tinymce_editor-30c1708b62.css","https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/no_variables/bundles/lato_extended-f5a83bde37.css"],"url_for_high_contrast_tinymce_editor_css":["https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/default/variables-high_contrast-8391c84da435c9cfceea2b2b3317ff66.css","https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/responsive_layout_high_contrast/bundles/what_gets_loaded_inside_the_tinymce_editor-4a61d234df.css","https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/no_variables/bundles/lato_extended-f5a83bde37.css"],"current_user_id":"9348","current_user_roles":["user","student"],"current_user_types":[],"current_user_disabled_inbox":false,"files_domain":"cluster100.canvas-user-content.com","DOMAIN_ROOT_ACCOUNT_ID":"36890000000000001","k12":false,"use_responsive_layout":true,"rce_auto_save":null,"use_rce_a11y_checker_notifications":null,"help_link_name":"Help","help_link_icon":"lifepreserver","use_high_contrast":false,"auto_show_cc":false,"disable_celebrations":false,"disable_keyboard_shortcuts":false,"LTI_LAUNCH_FRAME_ALLOWANCES":["geolocation *","microphone *","camera *","midi *","encrypted-media *","autoplay *"],"DEEP_LINKING_POST_MESSAGE_ORIGIN":"https://edmonds15.instructure.com","DEEP_LINKING_LOGGING":null,"comment_library_suggestions_enabled":false,"SETTINGS":{"open_registration":true,"collapse_global_nav":false,"release_notes_badge_disabled":false},"API_GATEWAY_URI":"https://api.us-east-1.instructure.com/graphql/future","DIRECT_SHARE_ENABLED":false,"FEATURES":{"cc_in_rce_video_tray":true,"featured_help_links":true,"rce_pretty_html_editor":true,"strip_origin_from_quiz_answer_file_references":true,"rce_buttons_and_icons":false,"important_dates":true,"feature_flag_filters":false,"k5_parent_support":true,"conferencing_in_planner":false,"remember_settings_tab":false,"word_count_in_speed_grader":false,"lti_platform_storage":false,"responsive_awareness":true,"responsive_misc":true,"product_tours":false,"files_dnd":true,"usage_rights_discussion_topics":true,"inline_math_everywhere":true,"granular_permissions_manage_users":true,"create_course_subaccount_picker":false,"lti_deep_linking_module_index_menu":false,"lti_multiple_assignment_deep_linking":false,"embedded_release_notes":true,"canvas_k6_theme":null,"new_math_equation_handling":true},"current_user":{"id":"9348","display_name":"Dylan Allmon","avatar_image_url":"https://edmonds15.instructure.com/images/thumbnails/2464755/B06BSmk5Bn3aUGDQmRpNFf6s2K0EmKu3O7nHTNtg","html_url":"https://edmonds15.instructure.com/about/9348","pronouns":"He/Him","avatar_is_fallback":false},"page_view_update_url":"/page_views/4227ba37-b627-481e-8ec8-a9751fd5557d?page_view_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpIjoiNDIyN2JhMzctYjYyNy00ODFlLThlYzgtYTk3NTFmZDU1NTdkIiwidSI6MzY4OTAwMDAwMDAwMDkzNDgsImMiOiIyMDIxLTExLTAyVDE5OjM0OjIxLjc1WiJ9.VAdIvWH-bJiiyYu69OI3PkYwWq4ddVGHaJm7vurMYjg","context_asset_string":null,"TIMEZONE":"America/Los_Angeles","LOCALE":"en","BIGEASY_LOCALE":"en_US","FULLCALENDAR_LOCALE":"en","MOMENT_LOCALE":"en","K5_USER":false,"K5_HOMEROOM_COURSE":false,"K5_SUBJECT_COURSE":false,"INCOMPLETE_REGISTRATION":null,"USER_EMAIL":"AllmoDyl000@edmonds15.org","PREFERENCES":{"dashboard_view":"cards","hide_dashcard_color_overlays":false,"custom_colors":{"course_24973":"#0011ff","user_9348":"#5a92de","course_24581":"#dddddd","course_23915":"#00bf36","course_25064":"#FD5D10","course_29105":"#26b0ff","course_29023":"#FF2717","course_29241":"#c800ff","course_23055":"#000","course_30159":"#000","group_23761":"#809b36","course_24980":"#0000ff","course_25067":"#ff8000","course_23928":"#ffff00","course_29242":"#ff00ff","course_23851":"#00ff00","course_24272":"#ff0000","course_31796":"#324A4D","course_32190":"#0000ff","course_32268":"#ffff00","course_32697":"#00ff00","course_32554":"#ff00ff","course_32121":"#ff0000","course_33290":"#FF6600","course_36624":"#000000","course_36646":"#fafafa"}},"STUDENT_PLANNER_ENABLED":true,"STUDENT_PLANNER_COURSES":[{"longName":"GRAPHIC ARTS 2 - GRAPHIC ARTS 2","shortName":"Graphic Design","originalName":"GRAPHIC ARTS 2","courseCode":"GRAPHIC ARTS 2","assetString":"course_32121","href":"/courses/32121","term":"Sem1_2021-22","subtitle":"enrolled as: Student","enrollmentState":"active","enrollmentType":"StudentEnrollment","observee":null,"id":"32121","isFavorited":true,"isK5Subject":false,"isHomeroom":false,"canManage":false,"canReadAnnouncements":true,"image":"https://inst-fs-iad-prod.inscloudgate.net/files/37d76578-174e-420d-84c1-db22d2c2ce32/Ai_Icon_02.jpg?download=1\u0026token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2MzU3NjM0ODUsInVzZXJfaWQiOm51bGwsInJlc291cmNlIjoiL2ZpbGVzLzM3ZDc2NTc4LTE3NGUtNDIwZC04NGMxLWRiMjJkMmMyY2UzMi9BaV9JY29uXzAyLmpwZyIsImp0aSI6IjQ4NzFmNTkxLTMyYzktNDdhMi1hZTcyLTE3MTI2YWI5Y2E5YyIsImhvc3QiOm51bGwsImV4cCI6MTYzNjM3MTg4NX0.gcUTU_Wio5pnhH_ly60gDnZJRFLuO7Bk6ldYnL8vpZNVQmwUw_PHv68k5Brgv0-nyeR9aHY4owDuNIXF4fYYhg","color":null,"position":0,"published":true,"canChangeCoursePublishState":false,"defaultView":"wiki","pagesUrl":"https://edmonds15.instructure.com/courses/32121/pages","frontPageTitle":"Semester 2: Home Page With Module Links"},{"longName":"HEALTH 10-12 - HEALTH 10-12","shortName":"Health","originalName":"HEALTH 10-12","courseCode":"HEALTH 10-12","assetString":"course_33290","href":"/courses/33290","term":"Sem1_2021-22","subtitle":"enrolled as: Student","enrollmentState":"active","enrollmentType":"StudentEnrollment","observee":null,"id":"33290","isFavorited":true,"isK5Subject":false,"isHomeroom":false,"canManage":false,"canReadAnnouncements":true,"image":"https://instructure-uploads.s3.amazonaws.com/account_36890000000000001/attachments/167232/healthy.gif?response-content-disposition=attachment%3B%20filename%3D%22health.gif%22%3B%20filename%2A%3DUTF-8%27%27health.gif\u0026X-Amz-Algorithm=AWS4-HMAC-SHA256\u0026X-Amz-Credential=AKIAJDW777BLV26JM2MQ%2F20211102%2Fus-east-1%2Fs3%2Faws4_request\u0026X-Amz-Date=20211102T193421Z\u0026X-Amz-Expires=604800\u0026X-Amz-SignedHeaders=host\u0026X-Amz-Signature=065b3d966b615a152fc9cd771f1762fa6de045fc8f88666c12fe765e3aaf17a0","color":null,"position":1,"published":true,"canChangeCoursePublishState":false,"defaultView":"modules","pagesUrl":"https://edmonds15.instructure.com/courses/33290/pages","frontPageTitle":"HEALTH-7"},{"longName":"ENGLISH 11 S1 - ENGLISH 11 S1","shortName":"English","originalName":"ENGLISH 11 S1","courseCode":"ENGLISH 11 S1","assetString":"course_32268","href":"/courses/32268","term":"Sem1_2021-22","subtitle":"enrolled as: Student","enrollmentState":"active","enrollmentType":"StudentEnrollment","observee":null,"id":"32268","isFavorited":true,"isK5Subject":false,"isHomeroom":false,"canManage":false,"canReadAnnouncements":true,"image":null,"color":null,"position":2,"published":true,"canChangeCoursePublishState":false,"defaultView":"wiki","pagesUrl":"https://edmonds15.instructure.com/courses/32268/pages","frontPageTitle":"Main Page"},{"longName":"MATH\u0026141 PRECALCULUS I CHS S1 - MATH\u0026141 PCALC1","shortName":"Math","originalName":"MATH\u0026141 PRECALCULUS I CHS S1","courseCode":"MATH\u0026141 PCALC1","assetString":"course_32697","href":"/courses/32697","term":"Sem1_2021-22","subtitle":"enrolled as: Student","enrollmentState":"active","enrollmentType":"StudentEnrollment","observee":null,"id":"32697","isFavorited":true,"isK5Subject":false,"isHomeroom":false,"canManage":false,"canReadAnnouncements":true,"image":"https://inst-fs-iad-prod.inscloudgate.net/files/6d097a81-2368-420e-8165-ed2ca296a15e/patterns.PNG?download=1\u0026token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2MzU4MTAzNzcsInVzZXJfaWQiOm51bGwsInJlc291cmNlIjoiL2ZpbGVzLzZkMDk3YTgxLTIzNjgtNDIwZS04MTY1LWVkMmNhMjk2YTE1ZS9wYXR0ZXJucy5QTkciLCJqdGkiOiI5YzVjYmU4ZS05YzU0LTQ5ZTQtODM1Zi0zYjhjNGVmN2ZhODIiLCJob3N0IjpudWxsLCJleHAiOjE2MzY0MTg3Nzd9.mhwufw_xxOgch2FuYJy7TBf_nSfj13Xdi8uVBQZNSgmqcWy9KBdlkZG8-rJbCNjij13Msg0bB89L2BneaoAXmw","color":null,"position":3,"published":true,"canChangeCoursePublishState":false,"defaultView":"wiki","pagesUrl":"https://edmonds15.instructure.com/courses/32697/pages","frontPageTitle":"Home Page Template With Buttons - S1"},{"longName":"COMPUTER SCIENCE PRINCIPLES S1 - COMP SCI PRI S1","shortName":"Computer Science","originalName":"COMPUTER SCIENCE PRINCIPLES S1","courseCode":"COMP SCI PRI S1","assetString":"course_32190","href":"/courses/32190","term":"Sem1_2021-22","subtitle":"enrolled as: Student","enrollmentState":"active","enrollmentType":"StudentEnrollment","observee":null,"id":"32190","isFavorited":true,"isK5Subject":false,"isHomeroom":false,"canManage":false,"canReadAnnouncements":true,"image":"https://inst-fs-iad-prod.inscloudgate.net/files/aaeaae20-2fb3-47f7-b084-dca240f855f7/Acellus-AP-Computer-Science-Principles.jpg?download=1\u0026token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2MzU2NjgzMTAsInVzZXJfaWQiOm51bGwsInJlc291cmNlIjoiL2ZpbGVzL2FhZWFhZTIwLTJmYjMtNDdmNy1iMDg0LWRjYTI0MGY4NTVmNy9BY2VsbHVzLUFQLUNvbXB1dGVyLVNjaWVuY2UtUHJpbmNpcGxlcy5qcGciLCJqdGkiOiIwM2FhNmU3Zi01MTRjLTQ2OTQtOWI1My0wZmM5ZDQxMTU1NDYiLCJob3N0IjpudWxsLCJleHAiOjE2MzYyNzMxMTB9.FSkr9YcxMqpfBDQ74fgvGlW8xm7GyFCGNvYF7nmtr7LsR6iUXhLOEaH6wiExjixKwFS5g-RwSBdaDPBYbwdM3A","color":null,"position":4,"published":true,"canChangeCoursePublishState":false,"defaultView":"wiki","pagesUrl":"https://edmonds15.instructure.com/courses/32190/pages","frontPageTitle":"Welcome to 5th Period Computer Science Principles!"},{"longName":"US/WASH STATE HIST S1 - US/WA ST HST S1","shortName":"History","originalName":"US/WASH STATE HIST S1","courseCode":"US/WA ST HST S1","assetString":"course_32554","href":"/courses/32554","term":"Sem1_2021-22","subtitle":"enrolled as: Student","enrollmentState":"active","enrollmentType":"StudentEnrollment","observee":null,"id":"32554","isFavorited":true,"isK5Subject":false,"isHomeroom":false,"canManage":false,"canReadAnnouncements":true,"image":"https://inst-fs-iad-prod.inscloudgate.net/files/45dab786-9ac5-43ef-8424-ced13c041129/canvas-1.png?download=1\u0026token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2MzU3NDQzNTAsInVzZXJfaWQiOm51bGwsInJlc291cmNlIjoiL2ZpbGVzLzQ1ZGFiNzg2LTlhYzUtNDNlZi04NDI0LWNlZDEzYzA0MTEyOS9jYW52YXMtMS5wbmciLCJqdGkiOiI0ZTM4ZjQzZi04ZjUyLTRiYjQtYjg0ZS1jN2NkMmI0MDZjMTQiLCJob3N0IjpudWxsLCJleHAiOjE2MzYzNTI3NTB9.i-SQKSVaP9NOLGBxAspxXVD7ib7n6Oc9dbUYw7lcp9Hr9MGUj4DSKh_7gJPuJqdepwSXBHSH5zsWQvJqhJOncA","color":null,"position":5,"published":true,"canChangeCoursePublishState":false,"defaultView":"wiki","pagesUrl":"https://edmonds15.instructure.com/courses/32554/pages","frontPageTitle":"Example Home Page "},{"longName":"LIBRARY - LIBRARY","shortName":"Library","originalName":"LIBRARY","courseCode":"LIBRARY","assetString":"course_36624","href":"/courses/36624","term":"Yearly_2021-22","subtitle":"enrolled as: Student","enrollmentState":"active","enrollmentType":"StudentEnrollment","observee":null,"id":"36624","isFavorited":true,"isK5Subject":false,"isHomeroom":false,"canManage":false,"canReadAnnouncements":true,"image":"https://inst-fs-iad-prod.inscloudgate.net/files/9ae203f3-8ee1-4d5d-81bc-de98e11d7077/lhs%20front%20pic.jfif?download=1\u0026token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2MzU1OTQzMTQsInVzZXJfaWQiOm51bGwsInJlc291cmNlIjoiL2ZpbGVzLzlhZTIwM2YzLThlZTEtNGQ1ZC04MWJjLWRlOThlMTFkNzA3Ny9saHMlMjBmcm9udCUyMHBpYy5qZmlmIiwianRpIjoiNjZmYjE3ZDMtODBmOS00Y2JlLWJhNTMtOWVmMDg1MWI3NDM1IiwiaG9zdCI6bnVsbCwiZXhwIjoxNjM2MTk5MTE0fQ.iciYkXFNyI1S-6TVDR-ppBE-iRYO6Ue4BGjIdfUZcP-njzjOnp4RRnQb358ej8aeOfcuNgfrDYuewYrvNXMc-w","color":null,"position":6,"published":true,"canChangeCoursePublishState":false,"defaultView":"wiki","pagesUrl":"https://edmonds15.instructure.com/courses/36624/pages","frontPageTitle":"Lynnwood High School Library Home Page "},{"longName":"ADVISORY - ADVISORY","shortName":"Advisory","originalName":"ADVISORY","courseCode":"ADVISORY","assetString":"course_36646","href":"/courses/36646","term":"Yearly_2021-22","subtitle":"enrolled as: Student","enrollmentState":"active","enrollmentType":"StudentEnrollment","observee":null,"id":"36646","isFavorited":true,"isK5Subject":false,"isHomeroom":false,"canManage":false,"canReadAnnouncements":true,"image":"https://inst-fs-iad-prod.inscloudgate.net/files/634d3aa7-a378-470c-8372-1cb3f49e5fd2/LHS%20advisory.jpg?download=1\u0026token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2MzU3NDIzNjQsInVzZXJfaWQiOm51bGwsInJlc291cmNlIjoiL2ZpbGVzLzYzNGQzYWE3LWEzNzgtNDcwYy04MzcyLTFjYjNmNDllNWZkMi9MSFMlMjBhZHZpc29yeS5qcGciLCJqdGkiOiI2MmEwYjljYy0xYmJlLTQ1MWMtOTZjYS03YzZjYjFkZjM4YTMiLCJob3N0IjpudWxsLCJleHAiOjE2MzYzNTA3NjR9.lGAzylKLvSK0wBeuxPOsgK6V5uCFP0UmG7bXfTKS1b1PQ5f0R9LhDJ5sc4LvQ0m2vnExQXIxU0UNKvPfh0us-Q","color":null,"position":null,"published":true,"canChangeCoursePublishState":false,"defaultView":"wiki","pagesUrl":"https://edmonds15.instructure.com/courses/36646/pages","frontPageTitle":"Advisory Homepage"}],"STUDENT_PLANNER_GROUPS":[{"id":"23761","assetString":"group_23761","name":"TeamWork 7","url":"/groups/23761"}],"CAN_ENABLE_K5_DASHBOARD":false,"CREATE_COURSES_PERMISSION":null,"DASHBOARD_SIDEBAR_URL":"https://edmonds15.instructure.com/dashboard-sidebar","notices":[],"active_context_tab":null};
-    BRANDABLE_CSS_HANDLEBARS_INDEX = [["new_styles_normal_contrast","new_styles_high_contrast","responsive_layout_normal_contrast","responsive_layout_high_contrast","new_styles_normal_contrast_rtl","new_styles_high_contrast_rtl","responsive_layout_normal_contrast_rtl","responsive_layout_high_contrast_rtl"],{"10":["5bbee90ed9",0,0,0,"f8054b5691",4,4,4],"15":["fc26aa5fd4",0,0,0,"f904416063",4,4,4],"19":["df5777ed9c"],"61":["c34731ada0","f405852bb2",0,1,"a4eda69452","3fd9943b9a",4,5],"64":["6d90a3d213",0,0,0,"cace9d4281",4,4,4],"67":["8b57f54e71",0,0,0,"43833dde85",4,4,4],"71":["dca6322676","3128a2cc3b",0,1,"1b8a1b5af4","851e44943d",4,5],"06":["4526e0502d",0,0,0,"4ca4dedba8",4,4,4],"f0":["7c947dce20",0,0,0,0,0,0,0],"c8":["ce38e5e01d","b9068fb85c",0,1,"abe25b43ac","891d385c6e",4,5],"1e":["a4ce6b99b5","39d2986ce0","93968ae330","541e45feba","e12dd92511","ba63dd3b58","8594db4d82","e291bb53e9"],"b3":["8ebc71ebc3","cf8efa05c8",0,1,"4efdc93a21","fd6d3a9780",4,5],"4f":["0a2c3dcf2f",0,0,0,"79668e6396",4,4,4],"0c":["c26e82abac",0,0,0,"b71e9cbd6d",4,4,4],"da":["b218c8c3f2","edbd1b5e83",0,1,"312312508c","dfb2d13098",4,5],"1d":["a3bfcb7961",0,0,0,"90682b3bbe",4,4,4],"08":["64bff5a97d"],"e2":["11429f119a"],"9f":["35936a18c3",0,0,0,0,0,0,0],"2b":["87b3ec4aa1",0,0,0,"39522697fb",4,4,4],"2c":["6d919206cd",0,0,0,0,0,0,0],"c2":["6f2721ae01"],"9c":["ecafc938e4",0,0,0,"59e7c22304",4,4,4],"c5":["ebf0e1382f","7f587d9a8a",0,1,"afbdabf23d","0d398196a8",4,5],"f2":["51574f9b13"]}]
-;
-  </script>
+  .dcg-loading-background-div {
+    animation: dcg-loading-pulse 2.2s infinite;
+    left: 50%;
+    background: #eee;
+    width: 140px;
+    height: 140px;
+    display: inline-block;
+    moz-animation: dcg-loading-pulse 2.2s infinite;
+    ms-animation: dcg-loading-pulse 2.2s infinite;
+    o-animation: dcg-loading-pulse 2.2s infinite;
+    webkit-animation: dcg-loading-pulse 2.2s infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -70px;
+    margin-top: -70px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
 
-  <link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/b576aefe4211b8a72d94bc56b72349ae/variables-8391c84da435c9cfceea2b2b3317ff66.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/timezone/America/Los_Angeles-d9cac65c52.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/timezone/en_US-80a0ce259b.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/main-e-514588ddd8.js" as="script" type="text/javascript"><script>
-//<![CDATA[
-
-      ;["https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/b576aefe4211b8a72d94bc56b72349ae/variables-8391c84da435c9cfceea2b2b3317ff66.js", "https://du11hjcvx0uqb.cloudfront.net/dist/timezone/America/Los_Angeles-d9cac65c52.js", "https://du11hjcvx0uqb.cloudfront.net/dist/timezone/en_US-80a0ce259b.js", "https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/main-e-514588ddd8.js"].forEach(function(src) {
-        var s = document.createElement('script')
-        s.src = src
-        s.async = false
-        document.head.appendChild(s)
-      });
-//]]>
-</script><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/1-c-ec86224602.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/2-c-d3eede0f8d.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/3-c-5d745b6aaa.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/4-c-e30a14ede8.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/5-c-85c3737bae.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/6-c-1e1359c836.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/7-c-5d565a537f.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/9-c-852aab12e6.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/10-c-891bf5afa1.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/11-c-b772b37455.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/12-c-8e44d6013e.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/13-c-8c51cabac7.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/14-c-380cae8ead.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/18-c-984ac7fa09.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/19-c-a0b59a293c.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/20-c-07a5d9d627.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/22-c-c59da64aac.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/23-c-10f56736c7.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/25-c-ca5782aded.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/28-c-041919dc2e.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/32-c-ef1d90b7c3.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/31-c-a939d9c3a9.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/33-c-281ee5ad6b.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/34-c-7a1c98c687.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/51-c-50a77ddac6.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/54-c-ce92ec7814.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/77-c-4cc7966be2.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/98-c-481d24f920.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/164-c-209fa1977d.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/dashboard-c-42e4af420d.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/past_global_alert-c-4e5ce8a1f4.js" as="script" type="text/javascript"><script>
-//<![CDATA[
-(window.bundles || (window.bundles = [])).push('dashboard');
-(window.bundles || (window.bundles = [])).push('past_global_alert');
-(window.bundles || (window.bundles = [])).push('navigation_header');
-//]]>
-</script>
-    <link rel="alternate" type="application/atom+xml" title="User Atom Feed (All Courses)" href="/feeds/users/user_04t7BU9SjA7hEEepjNSgbsnwGhnUskAY94mHhMD6.atom" />
-  <title>Dashboard</title>
-  
-  <script>
-    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-    ga('create', "UA-9138420-1", 'auto');
-      ga('set', 'userId', "7619459e8448702e0f49a5d1dd261193");
-    ga('set', 'dimension1', "100");
-    ga('set', 'dimension2', "00");
-    ga('set', 'dimension3', "0");
-    ga('set', 'dimension4', "K12");
-    ga('send', 'pageview');
-    (window.requestIdleCallback || window.setTimeout)(function(){
-      var s=document.createElement('script'), m=document.getElementsByTagName('script')[0]
-      s.async=1; s.src='https://www.google-analytics.com/analytics.js'
-      m.parentNode.insertBefore(s,m)
-    });
-  </script>
-
-
+  .dcg-loading-div {
+    color: #fff;
+    font-size: 18px;
+    left: 50%;
+    width: 140px;
+    height: 140px;
+    display: inline-block;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: transparent;
+    margin-left: -70px;
+    margin-top: -70px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background: no-repeat center center;
+    background-size: 120px 25px;
+    background-image:url(data:image/png;base64,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);
+  }
+</style>
 
 </head>
+<body data-load-data="{&quot;user&quot;:{&quot;userId&quot;:&quot;616dbc9c7359de05ef44c720&quot;,&quot;name&quot;:&quot;Dylan Allmon&quot;,&quot;email&quot;:&quot;allmodyl000@edmonds15.org&quot;,&quot;subscriptions&quot;:[],&quot;verificationStatus&quot;:&quot;VERIFIED&quot;,&quot;privacyConsent&quot;:{&quot;version&quot;:1,&quot;date&quot;:&quot;2021-10-18T18:27:44.268Z&quot;,&quot;site&quot;:&quot;https://www.desmos.com&quot;},&quot;isTeacher&quot;:false,&quot;featureFlags&quot;:[]},&quot;seed&quot;:&quot;31ed1506f173491fbfcbb9bd87414da1&quot;}" data-country="US">
 
-<body class="with-right-side  primary-nav-expanded full-width context-user_9348 responsive_awareness responsive_misc responsive_student_grades_page">
-
-<noscript>
-  <div role="alert" class="ic-flash-static ic-flash-error">
-    <div class="ic-flash__icon" aria-hidden="true">
-      <i class="icon-warning"></i>
-    </div>
-    <h1>You need to have JavaScript enabled in order to access this site.</h1>
-  </div>
-</noscript>
-
-
-
-
-<ul id="flash_message_holder"></ul>
-<div id="flash_screenreader_holder"></div>
-
-<div id="application" class="ic-app">
-  
-
-
-
-    <header id="mobile-header" class="no-print">
-      <button type="button" class="Button Button--icon-action-rev Button--large mobile-header-hamburger">
-        <i class="icon-solid icon-hamburger"></i>
-        <span id="mobileHeaderInboxUnreadBadge" class="menu-item__badge" style="min-width: 0; top: 12px; height: 12px; right: 6px; display:none;"></span>
-        <span class="screenreader-only">Dashboard</span>
-      </button>
-      <div class="mobile-header-space"></div>
-        <span class="mobile-header-title">Dashboard</span>
-        <div class="mobile-header-space"></div>
-        <div class="mobile-header-space"></div>
-    </header>
-    <nav id="mobileContextNavContainer"></nav>
-  <header id="header" class="ic-app-header no-print ">
-    <a href="#content" id="skip_navigation_link">Skip To Content</a>
-      <div role="region" class="ic-app-header__main-navigation" aria-label="Global Navigation">
-        <div class="ic-app-header__logomark-container">
-          <a href="https://edmonds15.instructure.com/" class="ic-app-header__logomark">
-            <span class="screenreader-only">Dashboard</span>
-          </a>
-        </div>
-        <ul id="menu" class="ic-app-header__menu-list">
-            <li class="menu-item ic-app-header__menu-list-item ">
-              <button id="global_nav_profile_link" class="ic-app-header__menu-list-link">
-                <div class="menu-item-icon-container">
-                  <div aria-hidden="true" class="fs-exclude ic-avatar ">
-                    <img src="https://edmonds15.instructure.com/images/thumbnails/2464755/B06BSmk5Bn3aUGDQmRpNFf6s2K0EmKu3O7nHTNtg" alt="Dylan Allmon" />
-                  </div>
-                  <span class="menu-item__badge"></span>
-                </div>
-                <div class="menu-item__text">
-                  Account
-                </div>
-              </button>
-            </li>
-          <li class="ic-app-header__menu-list-item  ic-app-header__menu-list-item--active">
-            <a id="global_nav_dashboard_link" href="https://edmonds15.instructure.com/" class="ic-app-header__menu-list-link">
-              <div class="menu-item-icon-container" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" class="ic-icon-svg ic-icon-svg--dashboard" version="1.1" x="0" y="0" viewBox="0 0 280 200" enable-background="new 0 0 280 200" xml:space="preserve"><path d="M273.09,180.75H197.47V164.47h62.62A122.16,122.16,0,1,0,17.85,142a124,124,0,0,0,2,22.51H90.18v16.29H6.89l-1.5-6.22A138.51,138.51,0,0,1,1.57,142C1.57,65.64,63.67,3.53,140,3.53S278.43,65.64,278.43,142a137.67,137.67,0,0,1-3.84,32.57ZM66.49,87.63,50.24,71.38,61.75,59.86,78,76.12Zm147,0L202,76.12l16.25-16.25,11.51,11.51ZM131.85,53.82v-23h16.29v23Zm15.63,142.3a31.71,31.71,0,0,1-28-16.81c-6.4-12.08-15.73-72.29-17.54-84.25a8.15,8.15,0,0,1,13.58-7.2c8.88,8.21,53.48,49.72,59.88,61.81a31.61,31.61,0,0,1-27.9,46.45ZM121.81,116.2c4.17,24.56,9.23,50.21,12,55.49A15.35,15.35,0,1,0,161,157.3C158.18,152,139.79,133.44,121.81,116.2Z" /></svg>
-
-              </div>
-              <div class="menu-item__text">Dashboard</div>
-            </a>
-          </li>
-            <li class="menu-item ic-app-header__menu-list-item ">
-              <button id="global_nav_courses_link" class="ic-app-header__menu-list-link">
-                <div class="menu-item-icon-container" aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="ic-icon-svg ic-icon-svg--courses" version="1.1" x="0" y="0" viewBox="0 0 280 259" enable-background="new 0 0 280 259" xml:space="preserve"><path d="M73.31,198c-11.93,0-22.22,8-24,18.73a26.67,26.67,0,0,0-.3,3.63v.3a22,22,0,0,0,5.44,14.65,22.47,22.47,0,0,0,17.22,8H200V228.19h-134V213.08H200V198Zm21-105.74h90.64V62H94.3ZM79.19,107.34V46.92H200v60.42Zm7.55,30.21V122.45H192.49v15.11ZM71.65,16.71A22.72,22.72,0,0,0,49,39.36V190.88a41.12,41.12,0,0,1,24.32-8h157V16.71ZM33.88,39.36A37.78,37.78,0,0,1,71.65,1.6H245.36V198H215.15v45.32h22.66V258.4H71.65a37.85,37.85,0,0,1-37.76-37.76Z"/></svg>
-
-                </div>
-                <div class="menu-item__text">
-                  Courses
-                </div>
-              </button>
-            </li>
-          <li class="menu-item ic-app-header__menu-list-item ">
-            <a id="global_nav_calendar_link" href="/calendar" class="ic-app-header__menu-list-link">
-              <div class="menu-item-icon-container" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" class="ic-icon-svg ic-icon-svg--calendar" version="1.1" x="0" y="0" viewBox="0 0 280 280" enable-background="new 0 0 280 280" xml:space="preserve"><path d="M197.07,213.38h16.31V197.07H197.07Zm-16.31,16.31V180.76h48.92v48.92Zm-48.92-16.31h16.31V197.07H131.85Zm-16.31,16.31V180.76h48.92v48.92ZM66.62,213.38H82.93V197.07H66.62ZM50.32,229.68V180.76H99.24v48.92Zm146.75-81.53h16.31V131.85H197.07Zm-16.31,16.31V115.54h48.92v48.92Zm-48.92-16.31h16.31V131.85H131.85Zm-16.31,16.31V115.54h48.92v48.92ZM66.62,148.15H82.93V131.85H66.62ZM50.32,164.46V115.54H99.24v48.92ZM34,262.29H246V82.93H34ZM246,66.62V42.16A8.17,8.17,0,0,0,237.84,34H213.38v8.15a8.15,8.15,0,1,1-16.31,0V34H82.93v8.15a8.15,8.15,0,0,1-16.31,0V34H42.16A8.17,8.17,0,0,0,34,42.16V66.62Zm-8.15-48.92a24.49,24.49,0,0,1,24.46,24.46V278.6H17.71V42.16A24.49,24.49,0,0,1,42.16,17.71H66.62V9.55a8.15,8.15,0,0,1,16.31,0v8.15H197.07V9.55a8.15,8.15,0,1,1,16.31,0v8.15Z"/></svg>
-
-              </div>
-              <div class="menu-item__text">
-                Calendar
-              </div>
-            </a>
-          </li>
-          <li class="menu-item ic-app-header__menu-list-item ">
-            <a id="global_nav_conversations_link" href="/conversations" class="ic-app-header__menu-list-link">
-              <div class="menu-item-icon-container">
-                <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" class="ic-icon-svg ic-icon-svg--inbox" version="1.1" x="0" y="0" viewBox="0 0 280 280" enable-background="new 0 0 280 280" xml:space="preserve"><path d="M91.72,120.75h96.56V104.65H91.72Zm0,48.28h80.47V152.94H91.72Zm0-96.56h80.47V56.37H91.72Zm160.94,34.88H228.52V10.78h-177v96.56H27.34A24.17,24.17,0,0,0,3.2,131.48V244.14a24.17,24.17,0,0,0,24.14,24.14H252.66a24.17,24.17,0,0,0,24.14-24.14V131.48A24.17,24.17,0,0,0,252.66,107.34Zm0,16.09a8.06,8.06,0,0,1,8,8v51.77l-32.19,19.31V123.44ZM67.58,203.91v-177H212.42v177ZM27.34,123.44H51.48v79.13L19.29,183.26V131.48A8.06,8.06,0,0,1,27.34,123.44ZM252.66,252.19H27.34a8.06,8.06,0,0,1-8-8V202l30,18H230.75l30-18v42.12A8.06,8.06,0,0,1,252.66,252.19Z"/></svg>
-</span>
-                <span class="menu-item__badge"></span>
-              </div>
-              <div class="menu-item__text">
-                Inbox
-              </div>
-            </a>
-          </li>
-            <li class="menu-item ic-app-header__menu-list-item" >
-              <button id="global_nav_history_link" class="ic-app-header__menu-list-link">
-                <div class="menu-item-icon-container" aria-hidden="true">
-                  <svg viewBox="0 0 1920 1920" class="ic-icon-svg menu-item__icon svg-icon-history" version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <path d="M960 112.941c-467.125 0-847.059 379.934-847.059 847.059 0 467.125 379.934 847.059 847.059 847.059 467.125 0 847.059-379.934 847.059-847.059 0-467.125-379.934-847.059-847.059-847.059M960 1920C430.645 1920 0 1489.355 0 960S430.645 0 960 0s960 430.645 960 960-430.645 960-960 960m417.905-575.955L903.552 988.28V395.34h112.941v536.47l429.177 321.77-67.765 90.465z" stroke="none" stroke-width="1" fill-rule="evenodd"/>
-</svg>
-                </div>
-                <div class="menu-item__text">
-                  History
-                </div>
-              </button>
-            </li>
-            
-
-
-          <li class="ic-app-header__menu-list-item">
-           <a id="global_nav_help_link" role="button" class="ic-app-header__menu-list-link" data-track-category="help system" data-track-label="help button" href="http://help.instructure.com/">
-              <div class="menu-item-icon-container" role="presentation">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="ic-icon-svg menu-item__icon svg-icon-lifepreserver" version="1.1" x="0" y="0" viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve" fill="currentColor"><path d="M189.95,70.33a11.82,11.82,0,0,0-6.24-7,10.92,10.92,0,0,0-2.32-.52,89,89,0,0,0-44-44.07,10.82,10.82,0,0,0-.56-2.43,11.77,11.77,0,0,0-7-6.29,93.75,93.75,0,0,0-59.5,0,11.71,11.71,0,0,0-7,6.23,10,10,0,0,0-.54,2.32,88.78,88.78,0,0,0-44.06,44,11.62,11.62,0,0,0-2.46.57,11.8,11.8,0,0,0-6.28,7,93.72,93.72,0,0,0,0,59.49,11.74,11.74,0,0,0,6.22,7,11.74,11.74,0,0,0,2.33.51,88.93,88.93,0,0,0,44,44.09,11.59,11.59,0,0,0,.57,2.44,11.8,11.8,0,0,0,7,6.28,93.75,93.75,0,0,0,59.49,0,9.84,9.84,0,0,0,7.51-8.55,88.88,88.88,0,0,0,44.08-44,11.62,11.62,0,0,0,2.45-.54,11.81,11.81,0,0,0,6.27-7A93.79,93.79,0,0,0,189.95,70.33ZM135.12,30a78,78,0,0,1,35,35l-24,9.89a51.74,51.74,0,0,0-20.94-21ZM119,136.8a11.28,11.28,0,0,0-9.37-1.75,36.37,36.37,0,0,1-19.49,0,11.11,11.11,0,0,0-9.31,1.72,40.94,40.94,0,0,1-17.66-17.72,11.22,11.22,0,0,0,1.74-9.39,36.34,36.34,0,0,1,0-19.51,11.13,11.13,0,0,0-1.72-9.3A40.94,40.94,0,0,1,80.81,63.28,11.2,11.2,0,0,0,90.33,65a36.37,36.37,0,0,1,19.49,0,11.15,11.15,0,0,0,9.31-1.72A41,41,0,0,1,136.79,81a11.12,11.12,0,0,0-1.74,9.37,36.37,36.37,0,0,1,0,19.49,11.07,11.07,0,0,0,1.73,9.32A41,41,0,0,1,119,136.8Zm7.3-116.17.38.56-13.88,33a48.8,48.8,0,0,0-13.08-1.76A53.23,53.23,0,0,0,87,54L73.84,20.64A82.58,82.58,0,0,1,126.33,20.63ZM65,29.88l9.9,24a51.93,51.93,0,0,0-21,20.95L30,64.88A77.94,77.94,0,0,1,65,29.88ZM21.18,73.28l33,13.88A50.72,50.72,0,0,0,54,113L20.64,126.15a82.66,82.66,0,0,1,0-52.49ZM64.87,170a77.79,77.79,0,0,1-35-35l24-9.88a52,52,0,0,0,20.94,21Zm8.8,9.39-.39-.56,13.89-33a50.56,50.56,0,0,0,25.8.2l13.18,33.37A82.55,82.55,0,0,1,73.67,179.37Zm61.3-9.26-9.88-24a51.94,51.94,0,0,0,21-20.94L170,135.13A77.78,77.78,0,0,1,135,170.11Zm43.86-43.39-33-13.88A50.83,50.83,0,0,0,146,87l33.37-13.18a82.66,82.66,0,0,1,0,52.49Z" /></svg>
-
-                <span class="menu-item__badge"></span>
-              </div>
-              <div class="menu-item__text">
-                Help
-              </div>
-</a>          </li>
-        </ul>
-      </div>
-      <div class="ic-app-header__secondary-navigation">
-        <ul class="ic-app-header__menu-list">
-          <li class="menu-item ic-app-header__menu-list-item">
-            <button
-              id="primaryNavToggle"
-              class="ic-app-header__menu-list-link ic-app-header__menu-list-link--nav-toggle"
-              aria-label="Minimize global navigation"
-              title="Minimize global navigation"
-            >
-              <div class="menu-item-icon-container" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" class="ic-icon-svg ic-icon-svg--navtoggle" version="1.1" x="0" y="0" width="40" height="32" viewBox="0 0 40 32" xml:space="preserve">
-  <path d="M39.5,30.28V2.48H37.18v27.8Zm-4.93-13.9L22.17,4,20.53,5.61l9.61,9.61H.5v2.31H30.14l-9.61,9.61,1.64,1.64Z"/>
-</svg>
-
-              </div>
-            </button>
-          </li>
-        </ul>
-      </div>
-    <div id="global_nav_tray_container"></div>
-    <div id="global_nav_tour"></div>
-  </header>
-
-
-  <div id="instructure_ajax_error_box">
-    <div style="text-align: right; background-color: #fff;"><a href="#" class="close_instructure_ajax_error_box_link">Close</a></div>
-    <iframe id="instructure_ajax_error_result" src="about:blank" style="border: 0;" title="Error"></iframe>
-  </div>
-
-  <div id="wrapper" class="ic-Layout-wrapper">
-    <div id="main" class="ic-Layout-columns">
-        <div class="ic-Layout-watermark"></div>
-      <div id="not_right_side" class="ic-app-main-content">
-        <div id="content-wrapper" class="ic-Layout-contentWrapper">
-          
-          <div id="content" class="ic-Layout-contentMain" role="main">
-            
-
-
-
-
-
-<div id="dashboard" class="ic-dashboard-app">
-  
-  
-<div id='announcementWrapper'>
-  
+  <div class="dcg-loading-div-container">
+  <div class="dcg-loading-background-div"></div>
+  <div class="dcg-loading-div">Loading...</div>
 </div>
 
 
+  <!-- GRAPHER -->
+  <div class="dcg-sliding-interior">
+    <!-- this will contain all of the menus and the graph -->
+    <div id="dcg-header-container"></div>
+    <div id="graph-container"></div>
+  </div>
 
+  <div id="mygraphs-container"></div>
+  <div id="dcg-modal-container"></div>
 
-
-
-
-    <div id="dashboard_header_container" class="ic-Dashboard-header">
-      <h1 class="ic-Dashboard-header__title hidden-phone">
-        Dashboard
-      </h1>
-    </div>
-      <div id="dashboard-planner" class="StudentPlanner__Container" style="display: none"></div>
-    <div
-      id="dashboard-activity"
-      class="ic-Dashboard-Activity"
-      style="display: none"
-    >
-      <!-- this will be populated via xhr from UsersController::dashboard_stream_items when someone selects the stream-items dashboard option -->
-    </div>
-
-      <script>
-//<![CDATA[
-(window.prefetched_xhrs = (window.prefetched_xhrs || {}))["/api/v1/dashboard/dashboard_cards"] = fetch("/api/v1/dashboard/dashboard_cards", {"credentials":"same-origin","headers":{"Accept":"application/json+canvas-string-ids, application/json","X-Requested-With":"XMLHttpRequest"}})
-//]]>
+  <!-- 1pixel white image for printing in FF -->
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wLEhYhKmtn2wYAAAAidEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVAgb24gYSBNYWOHqHdDAAAADElEQVQI12P4//8/AAX+Av7czFnnAAAAAElFTkSuQmCC" id="whitebg" aria-hidden="true" alt="">
+ <!-- 1 white pixel for printing in FF -->
+  <script type="text/javascript">
+  // catches errors within iframe and promotes them to qunit during tests
+  try {
+    window.onerror=window.top.onerror;
+  } catch (ex){}
+  if(typeof Desmos === 'undefined') Desmos = {};
+  Desmos.config = {};
+  Desmos.commit = '266420afe379c5ca945d01f2c0482337b577c50e';
 </script>
-  <script>
-//<![CDATA[
-(window.prefetched_xhrs = (window.prefetched_xhrs || {}))["https://edmonds15.instructure.com/dashboard-sidebar"] = fetch("https://edmonds15.instructure.com/dashboard-sidebar", {"credentials":"same-origin","headers":{"Accept":"application/json+canvas-string-ids, application/json","X-Requested-With":"XMLHttpRequest"}})
-//]]>
+ <!-- Pull config information, and include it in Desmos.config -->
+  <!-- TODO - get console and pushstate into regular .js files -->
+  <script type="text/javascript">
+  if(!window.console) window.console = {};
+  if(!window.console.log) window.console.log = function(){};
 </script>
-<div id="DashboardCard_Container" style="display: block">
-  <div class="ic-DashboardCard__box">
-      <div class="ic-DashboardCard">
-        <svg xmlns="http://www.w3.org/2000/svg" class="ic-DashboardCard__placeholder-svg" version="1.1" x="0" y="0" viewBox="-1087 618 260 254" xml:space="preserve">
-          <title>Empty Card</title>
-          <g class="ic-DashboardCard__placeholder-animates">
-            <path d="M-1087 618h260v126h-260V618z"/>
-            <rect x="-1062" y="759.5" class="st0" width="184" height="16"/>
-            <rect x="-1062" y="785.5" class="st0" width="106" height="9"/>
-            <circle cx="-1054" cy="842.5" r="8"/>
-            <circle cx="-989" cy="842.5" r="8"/>
-            <circle cx="-924" cy="842.5" r="8"/>
-            <circle cx="-859" cy="842.5" r="8"/>
-          </g>
-        </svg>
-      </div>
-      <div class="ic-DashboardCard">
-        <svg xmlns="http://www.w3.org/2000/svg" class="ic-DashboardCard__placeholder-svg" version="1.1" x="0" y="0" viewBox="-1087 618 260 254" xml:space="preserve">
-          <title>Empty Card</title>
-          <g class="ic-DashboardCard__placeholder-animates">
-            <path d="M-1087 618h260v126h-260V618z"/>
-            <rect x="-1062" y="759.5" class="st0" width="184" height="16"/>
-            <rect x="-1062" y="785.5" class="st0" width="106" height="9"/>
-            <circle cx="-1054" cy="842.5" r="8"/>
-            <circle cx="-989" cy="842.5" r="8"/>
-            <circle cx="-924" cy="842.5" r="8"/>
-            <circle cx="-859" cy="842.5" r="8"/>
-          </g>
-        </svg>
-      </div>
-      <div class="ic-DashboardCard">
-        <svg xmlns="http://www.w3.org/2000/svg" class="ic-DashboardCard__placeholder-svg" version="1.1" x="0" y="0" viewBox="-1087 618 260 254" xml:space="preserve">
-          <title>Empty Card</title>
-          <g class="ic-DashboardCard__placeholder-animates">
-            <path d="M-1087 618h260v126h-260V618z"/>
-            <rect x="-1062" y="759.5" class="st0" width="184" height="16"/>
-            <rect x="-1062" y="785.5" class="st0" width="106" height="9"/>
-            <circle cx="-1054" cy="842.5" r="8"/>
-            <circle cx="-989" cy="842.5" r="8"/>
-            <circle cx="-924" cy="842.5" r="8"/>
-            <circle cx="-859" cy="842.5" r="8"/>
-          </g>
-        </svg>
-      </div>
-      <div class="ic-DashboardCard">
-        <svg xmlns="http://www.w3.org/2000/svg" class="ic-DashboardCard__placeholder-svg" version="1.1" x="0" y="0" viewBox="-1087 618 260 254" xml:space="preserve">
-          <title>Empty Card</title>
-          <g class="ic-DashboardCard__placeholder-animates">
-            <path d="M-1087 618h260v126h-260V618z"/>
-            <rect x="-1062" y="759.5" class="st0" width="184" height="16"/>
-            <rect x="-1062" y="785.5" class="st0" width="106" height="9"/>
-            <circle cx="-1054" cy="842.5" r="8"/>
-            <circle cx="-989" cy="842.5" r="8"/>
-            <circle cx="-924" cy="842.5" r="8"/>
-            <circle cx="-859" cy="842.5" r="8"/>
-          </g>
-        </svg>
-      </div>
-      <div class="ic-DashboardCard">
-        <svg xmlns="http://www.w3.org/2000/svg" class="ic-DashboardCard__placeholder-svg" version="1.1" x="0" y="0" viewBox="-1087 618 260 254" xml:space="preserve">
-          <title>Empty Card</title>
-          <g class="ic-DashboardCard__placeholder-animates">
-            <path d="M-1087 618h260v126h-260V618z"/>
-            <rect x="-1062" y="759.5" class="st0" width="184" height="16"/>
-            <rect x="-1062" y="785.5" class="st0" width="106" height="9"/>
-            <circle cx="-1054" cy="842.5" r="8"/>
-            <circle cx="-989" cy="842.5" r="8"/>
-            <circle cx="-924" cy="842.5" r="8"/>
-            <circle cx="-859" cy="842.5" r="8"/>
-          </g>
-        </svg>
-      </div>
-      <div class="ic-DashboardCard">
-        <svg xmlns="http://www.w3.org/2000/svg" class="ic-DashboardCard__placeholder-svg" version="1.1" x="0" y="0" viewBox="-1087 618 260 254" xml:space="preserve">
-          <title>Empty Card</title>
-          <g class="ic-DashboardCard__placeholder-animates">
-            <path d="M-1087 618h260v126h-260V618z"/>
-            <rect x="-1062" y="759.5" class="st0" width="184" height="16"/>
-            <rect x="-1062" y="785.5" class="st0" width="106" height="9"/>
-            <circle cx="-1054" cy="842.5" r="8"/>
-            <circle cx="-989" cy="842.5" r="8"/>
-            <circle cx="-924" cy="842.5" r="8"/>
-            <circle cx="-859" cy="842.5" r="8"/>
-          </g>
-        </svg>
-      </div>
-      <div class="ic-DashboardCard">
-        <svg xmlns="http://www.w3.org/2000/svg" class="ic-DashboardCard__placeholder-svg" version="1.1" x="0" y="0" viewBox="-1087 618 260 254" xml:space="preserve">
-          <title>Empty Card</title>
-          <g class="ic-DashboardCard__placeholder-animates">
-            <path d="M-1087 618h260v126h-260V618z"/>
-            <rect x="-1062" y="759.5" class="st0" width="184" height="16"/>
-            <rect x="-1062" y="785.5" class="st0" width="106" height="9"/>
-            <circle cx="-1054" cy="842.5" r="8"/>
-            <circle cx="-989" cy="842.5" r="8"/>
-            <circle cx="-924" cy="842.5" r="8"/>
-            <circle cx="-859" cy="842.5" r="8"/>
-          </g>
-        </svg>
-      </div>
-      <div class="ic-DashboardCard">
-        <svg xmlns="http://www.w3.org/2000/svg" class="ic-DashboardCard__placeholder-svg" version="1.1" x="0" y="0" viewBox="-1087 618 260 254" xml:space="preserve">
-          <title>Empty Card</title>
-          <g class="ic-DashboardCard__placeholder-animates">
-            <path d="M-1087 618h260v126h-260V618z"/>
-            <rect x="-1062" y="759.5" class="st0" width="184" height="16"/>
-            <rect x="-1062" y="785.5" class="st0" width="106" height="9"/>
-            <circle cx="-1054" cy="842.5" r="8"/>
-            <circle cx="-989" cy="842.5" r="8"/>
-            <circle cx="-924" cy="842.5" r="8"/>
-            <circle cx="-859" cy="842.5" r="8"/>
-          </g>
-        </svg>
-      </div>
-    <br/>
-  </div>
+ <!-- Make sure console.log is defined -->
+  <script type="text/javascript">
+  if(window.location.protocol === 'file:') {
+    window.history.pushState = function(){};
+    window.history.replaceState = function(){};
+  }
+</script>
+ <!-- Make sure we don't use pushstate on file protocol -->
 
-</div>
-
-</div>
-
-          </div>
-        </div>
-        <div id="right-side-wrapper" class="ic-app-main-content__secondary">
-          <aside id="right-side" role="complementary">
-                <div class="placeholder"></div>
-
-          </aside>
-        </div>
-      </div>
-    </div>
-      
-<footer role="contentinfo" id="footer" class="ic-app-footer">
-  <a href="http://www.instructure.com" class="footer-logo ic-app-footer__logo-link">
-    <span class="screenreader-only">
-      By Instructure
-    </span>
-  </a>
-  <div id="footer-links" class="ic-app-footer__links">
-    <a href="https://edmonds15.instructure.com/privacy_policy">Privacy Policy</a>
-    <span id="terms_of_service_footer_link" class="terms_of_service_link terms-of-service__link"></span>
-<a href="http://facebook.com/instructure">Facebook</a>
-<a href="http://twitter.com/instructure">Twitter</a>
-
-  </div>
-</footer>
-
-  </div>
-
-
-
-    <div style="display:none;"><!-- Everything inside of this should always stay hidden -->
-        <div id="page_view_id">4227ba37-b627-481e-8ec8-a9751fd5557d</div>
-    </div>
-  <div id='aria_alerts' class='hide-text affix' role="alert" aria-live="assertive"></div>
-  <div id='StudentTray__Container'></div>
-  
+  <script src="/assets/build/calculator_desktop-aa1abe4f4693d523be7951b1325a15af917ea1c2.js"></script>
 
   <script>
-    Object.assign(
-      ENV,
-      {}
-    )
+    require(['toplevel/calculator_desktop', 'testbridge', 'jquery'], function (calcPromise, TestBridge, $) {
+      $('.dcg-loading-div-container').hide();
+      calcPromise.then(function(calc) {
+        window.Calc = calc;
+        TestBridge.ready();
+      });
+    });
   </script>
-
-<link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/15-c-ccbc6b48bb.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/21-c-a693d37280.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/terms_of_service_modal-c-cd9ea1c83a.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/inst_fs_service_worker-c-937e10e45f.js" as="script" type="text/javascript"><script>
-//<![CDATA[
-(window.bundles || (window.bundles = [])).push('terms_of_service_modal');
-(window.bundles || (window.bundles = [])).push('inst_fs_service_worker');
-//]]>
-</script>
-  
-
-</div> <!-- #application -->
 </body>
 </html>
