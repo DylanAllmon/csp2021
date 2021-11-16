@@ -108,5 +108,5 @@ function collide3D(x1,y1,z1,w1,h1,d1,x2,y2,z2,w2,h2,d2) {
 }
 
 function seconds() {
-	return (round(millis()/1000));
+	return (millis()/1000);
 }
