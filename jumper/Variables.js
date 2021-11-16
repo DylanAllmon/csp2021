@@ -87,8 +87,3 @@ function resetVars() {
 		color:null
 	}
 }
-
-let pizza;
-function preload() {
-	pizza = loadImage("b05a0af72ad845f3a6abe16143d7853a.jpg");
-}
