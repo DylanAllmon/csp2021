@@ -10,11 +10,6 @@ function setup() {
 	cam.setPosition(mainOffset.x*blockSize,-mainOffset.y*blockSize,mainOffset.z*blockSize);
 	
 	strokeWeight(0);
-	
-	//obstacle(0,0,20,5,1,1);
-	//obstacle(0,0,30,3,2,1);
-	//obstacle(0,0,40,3,2,1);
-	//obstacle(0,0,50,3,2,1);
 }
 
 function draw() {		
@@ -62,26 +57,23 @@ function render() {
 	renderObstacles();
 }
 
-let sec = 0;
+let ticks = 0;
 function tickSecond() {
-	if (seconds() > sec) {
-		sec = seconds();
-		
-		
-		leveling();
-		
-		
-	}
+	ticks++;
+	leveling();
 }
 
 function leveling() {
-	if (sec % spawnRate == 0) {
-		obstacle(0,0,40,5,1,1);
+	if (ticks % spawnRate == 0) {
+		let e = round(random(1,5));
+		let r = round(random(-1,1));
+		obstacle((r*4+(-r)*(e/2)),0,40,e,round(random(1,3)),1);
 	}
 }
 
 function cameraMove() {
 	if (view === "main") {
+		//perspective(80);
 		cam.lookAt(0, -mainOffset.y*blockSize,sideOffset.z*blockSize);
 		let velX = (mainOffset.x*blockSize-cam.eyeX)/10;
 		let velY = (-mainOffset.y*blockSize-cam.eyeY)/10;
@@ -94,6 +86,7 @@ function cameraMove() {
 			transitioning = false;
 		}
 	} else {
+		//ortho();
 		cam.lookAt(0, -sideOffset.y*blockSize,sideOffset.z*blockSize);
 		let velX = (sideOffset.x*blockSize-cam.eyeX)/10;
 		let velY = (-sideOffset.y*blockSize-cam.eyeY)/10;
@@ -116,6 +109,7 @@ function difficulty() {
  		gravity = baseGravity*difficultyMultiplier;
  		jumpForce = baseJumpForce*(1+(difficultyMultiplier-1)/2);
 		obstacleSpeed = baseObstacleSpeed*difficultyMultiplier;
+		spawnRate = round(baseSpawnRate/difficultyMultiplier);
 	if (difficultyMultiplier < 2 && player != null) {
 		difficultyMultiplier+=0.0001;
 	} else {
@@ -186,6 +180,11 @@ function input() {
 }
 
 function keyPressed(event) {
+	if (player === null) {
+		resetVars();
+		setup();
+		return;
+	}
   if (event.keyCode === 70) {
 		if (transitioning == false) {
     	transitioning = true;
