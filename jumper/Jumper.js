@@ -1,8 +1,8 @@
 function setup() {
 	createCanvas(windowW, windowH, WEBGL);
 	textFont(font);
-  textSize(ratio*40);
-  textAlign(CENTER, CENTER);
+  	textSize(ratio*40);
+  	textAlign(CENTER, CENTER);
 	player.color = color(80,0,200);
 	angleMode(DEGREES);
 	obstacles.addColumn();
