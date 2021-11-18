@@ -64,3 +64,4 @@ function renderObstacles() {
 	}
 	pop();
 }
+ 
