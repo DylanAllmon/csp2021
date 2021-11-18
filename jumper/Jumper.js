@@ -68,7 +68,7 @@ function render() {
 	translate(0,0,sideOffset.z*blockSize);
   rotateY(a);
 	fill(color(('hsl(' + floor(e*(360/maxHue)) + ',100%,30%)')));
-	text("Score: " + score, 0, -150);
+	text("Score: " + score, 0, -100*ratio);
 	pop();
 	renderPlayer();
 	renderPlatform();
