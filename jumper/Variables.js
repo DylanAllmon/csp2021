@@ -1,5 +1,11 @@
 //Variables were taking up too much space.
 
+let txtr = null;
+
+var score = 0;
+
+var count = 0;
+
 const windowH = window.innerHeight;
 
 const windowW = Math.round(windowH*16/9);
@@ -47,6 +53,7 @@ var transitioning = false;
 var cam;
 var distance;
 
+const playerZ = 0;
 var player = {
 	x:0,velX:0,
 	y:0,velY:0,
@@ -57,6 +64,10 @@ var player = {
 }
 
 function resetVars() {
+	score = 0;
+	count = 0;
+	
+	ticks = 0;
 
 	obstacles = new p5.Table(0);
 
@@ -86,4 +97,11 @@ function resetVars() {
 		onGround:true,
 		color:null
 	}
+}
+
+let pizza;
+let font;
+function preload() {
+	pizza = loadImage("b05a0af72ad845f3a6abe16143d7853a.jpg");
+	font = loadFont("Font.ttf");
 }
