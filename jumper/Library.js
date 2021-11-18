@@ -1,8 +1,10 @@
 function obstacle(x,y,z,w,h,d) {
+	count++;
 	obstacles.addRow();
 	obstacles.set(obstacles.getRowCount()-1,0,createVector(x*blockSize,y*blockSize,z*blockSize));
 	obstacles.set(obstacles.getRowCount()-1,1,createVector(w*blockSize,h*blockSize,d*blockSize));
-
+	obstacles.set(obstacles.getRowCount()-1,2,count);
+	obstacles.set(obstacles.getRowCount()-1,3,false);
 }
 
 function cube(size, textures /*top[0], bottom[1], north[2], south[3], east[4], west[5]*/, location, camera) {
