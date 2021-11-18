@@ -39,7 +39,7 @@ function renderObstacles() {
 			push();
 			translate(loc.x,loc.y-size.y/2,-loc.z);
 			cube([size.x,size.y,size.z],all(null), createVector(loc.x,-loc.y,-loc.z), createVector(cam.eyeX,cam.eyeY,cam.eyeZ));
-			if (obstacles.get(i,2) % 10 == 0) {
+			if (obstacles.get(i,2) % 10 == 0 || obstacles.get(i,2) % 25 == 0) {
 				fill(255,255,255);
 				translate(0,-size.y/8,blockSize/2+1);
 				textSize((size.x < size.y ? size.x : size.y));
