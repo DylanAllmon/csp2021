@@ -39,12 +39,24 @@ function renderObstacles() {
 			push();
 			translate(loc.x,loc.y-size.y/2,-loc.z);
 			cube([size.x,size.y,size.z],all(null), createVector(loc.x,-loc.y,-loc.z), createVector(cam.eyeX,cam.eyeY,cam.eyeZ));
+			if (obstacles.get(i,2) % 10 == 0) {
+				fill(255,255,255);
+				translate(0,-size.y/8,blockSize/2+1);
+				textSize((size.x < size.y ? size.x : size.y));
+				text(obstacles.get(i,2), 0, 0);
+			}
 			pop();
+			
 			loc.z-=obstacleSpeed;
 			if (player != null && collide3D(player.x,player.y,player.z,player.width*blockSize,player.height*blockSize,player.depth*blockSize,loc.x,loc.y,loc.z,size.x,size.y,size.z)) {
 				player = null;
 			}
-		
+						
+			if (loc.z < playerZ && !obstacles.get(i,3) && player != null) {
+				score++;
+				obstacles.set(i,3,true);
+			}
+			
 			if (loc.z < -mainOffset.z*3*blockSize) {
 				obstacles.set(i,0,null);
 			}
