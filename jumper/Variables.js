@@ -99,9 +99,7 @@ function resetVars() {
 	}
 }
 
-let pizza;
 let font;
 function preload() {
-	pizza = loadImage("b05a0af72ad845f3a6abe16143d7853a.jpg");
-	font = loadFont("Font.ttf");
+	font = loadFont("jumper/Font.ttf");
 }
