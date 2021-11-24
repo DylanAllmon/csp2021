@@ -7,9 +7,9 @@ function renderPlayer() {
 		noFill();
 		strokeWeight(1*ratio);
 		box(player.width*blockSize,player.height*blockSize,player.depth*blockSize);
-		strokeWeight(0);
+		noStroke();
 		fill(player.color);
-		cube([player.width*blockSize,player.height*blockSize,player.depth*blockSize], all(null), createVector(player.x,player.y,player.z), createVector(cam.eyeX,cam.eyeY,cam.eyeZ));
+		cube([player.width*blockSize,player.height*blockSize,player.depth*blockSize], all(null), createVector(player.x,player.y,player.z), createVector(gameCam.eyeX,gameCam.eyeY,gameCam.eyeZ));
 		ambientLight(brightness);
 		pop();
 	}
@@ -18,14 +18,10 @@ function renderPlayer() {
 function renderPlatform() {
 	push();
 	translate(0,1*blockSize/2,mainOffset.z*3*blockSize-platformLength/2*blockSize);
-	//rotateX(90);
 	fill(100);
-	//plane(platformWidth*blockSize, platformLength*blockSize);
 	cube([platformWidth*blockSize, 1*blockSize, platformLength*blockSize], all(null), null, null);
-	//rotateX(-90);
 	fill(0);
 	translate(0,0,-platformLength*blockSize/2);
-	//sphere(platformWidth/2*blockSize);
 	pop();
 }
 
@@ -38,7 +34,7 @@ function renderObstacles() {
 			let size = obstacles.get(i,1);
 			push();
 			translate(loc.x,loc.y-size.y/2,-loc.z);
-			cube([size.x,size.y,size.z],all(null), createVector(loc.x,-loc.y,-loc.z), createVector(cam.eyeX,cam.eyeY,cam.eyeZ));
+			cube([size.x,size.y,size.z],all(null), createVector(loc.x,-loc.y,-loc.z), createVector(gameCam.eyeX,gameCam.eyeY,gameCam.eyeZ));
 			if (obstacles.get(i,2) % 10 == 0 || obstacles.get(i,2) % 25 == 0) {
 				fill(255,255,255);
 				translate(0,-size.y/8,blockSize/2+1);
@@ -64,4 +60,3 @@ function renderObstacles() {
 	}
 	pop();
 }
- 
