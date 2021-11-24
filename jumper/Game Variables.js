@@ -53,6 +53,8 @@ var transitioning = false;
 var cam;
 var distance;
 
+var username = "plsas";
+
 const playerZ = 0;
 var player = {
 	x:0,velX:0,
@@ -67,7 +69,7 @@ function resetVars() {
 	score = 0;
 	count = 0;
 	
-	ticks = 0;
+	ticks = 100;
 
 	obstacles = new p5.Table(0);
 
@@ -86,7 +88,7 @@ function resetVars() {
 	view = "main";
 	transitioning = false;
 	
-	cam = null;
+	gameCam = null;
 	distance = null;
 	
 	player = {
@@ -101,5 +103,5 @@ function resetVars() {
 
 let font;
 function preload() {
-	font = loadFont("jumper/Font.ttf");
+	font = loadFont("Font.ttf");
 }
