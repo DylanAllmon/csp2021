@@ -1,42 +1,31 @@
-function setup() {
-	createCanvas(windowW, windowH, WEBGL);
-	textFont(font);
-  	textSize(ratio*40);
-  	textAlign(CENTER, CENTER);
+function gameStart() {
 	player.color = color(80,0,200);
-	angleMode(DEGREES);
-	obstacles.addColumn();
-	obstacles.addColumn();
-	obstacles.addColumn();
-	obstacles.addColumn();
-	cam = createCamera();
-	distance = cam.eyeZ;
+	textSize(ratio*40);
+	gameCam = createCamera();
+	distance = gameCam.eyeZ;
 	perspective(80);
-	cam.setPosition(mainOffset.x*blockSize,-mainOffset.y*blockSize,mainOffset.z*blockSize);
-	
-	txtr = createGraphics(blockSize,blockSize);
-	
-	strokeWeight(0);
+	gameCam.setPosition(mainOffset.x*blockSize,-mainOffset.y*blockSize,mainOffset.z*blockSize);
 }
 
-function draw() {		
+function gameTick() {
+	setCamera(gameCam);
+	textSize(ratio*40);
 	difficulty();
 	
-	bg();
 	input();
 	if (player != null) {
 		keyDownActions();
-		physics();
+		gamePhysics();
 	}
-	render();	
+	gameRender();	
 	if (transitioning) {
-		cameraMove();
+		gameCameraMove();
 	}
 	
 	tickSecond();
 }
 
-function physics() {
+function gamePhysics() {
 	if (abs(player.x+player.velX) < (platformWidth/2-0.5)*blockSize) {
 		player.x+=player.velX;
 	} else {
@@ -54,20 +43,17 @@ function physics() {
 	}
 }
 
-function render() {
+function gameRender() {
+	background(color(('hsl(' + floor((hue > maxHue/2 ? hue-maxHue/2 : hue+maxHue/2)*(360/maxHue)) + ',100%,90%)')));
 	ambientLight(brightness);
 	
 	pointLight(color(255), 0,0,mainOffset.z*blockSize)
-	let e = hue+maxHue/2;
 	
-	if (e > maxHue) {
-		e-=maxHue;
-	}
 	push();
-	let a = atan2(0+cam.eyeX,cam.eyeZ-sideOffset.z*blockSize);
+	let a = atan2(0+gameCam.eyeX,gameCam.eyeZ-sideOffset.z*blockSize);
 	translate(0,0,sideOffset.z*blockSize);
   rotateY(a);
-	fill(color(('hsl(' + floor(e*(360/maxHue)) + ',100%,30%)')));
+	fill(color(('hsl(' + floor(hue*(360/maxHue)) + ',100%,30%)')));
 	text("Score: " + score, 0, -100*ratio);
 	pop();
 	renderPlayer();
@@ -75,57 +61,76 @@ function render() {
 	renderObstacles();
 }
 
-let ticks = 0;
+let ticks = 100;
 function tickSecond() {
 	ticks++;
 	leveling();
 }
 
 function leveling() {
+	
 	if (ticks == spawnRate/2) {
-		let r = round(random(-1,1));
-		let e = round(random(1,5));
-		if (r == 0) {
-			e = round(random(4,5));
-		}
-		obstacle((r*4+(-r)*(e/2)),0,40,e,round(random(1,3)),1,count);
+		randomObstacle(spawnZ);
 	}
 	if (ticks>=spawnRate) {
-		ticks = 0;
-		let e = round(random(1,5));
-		let r = round(random(-1,1));
-		if (r == 0) {
-			e = round(random(4,5));
+		if (count == 0) {
+			for (let z = 20; z < spawnZ; z+=20) {
+				randomObstacle(z);
+			}
 		}
-		obstacle((r*4+(-r)*(e/2)),0,40,e,round(random(1,3)),1,count);
+		ticks = 0;
+		randomObstacle(spawnZ);
 	}
 }
 
-function cameraMove() {
+const spawnZ = 80;
+
+function randomObstacle(z) {
+	if (round(random(0,3)) > 0) {
+		let r = round(random(-1,1));
+		let e = round(random(2,5));
+		if (r == 0) {
+			e = round(random(4,5));
+		}
+		obstacle((r*4+(-r)*(e/2)),0,z,e,round(random(1,3)),1,false);
+	} else {
+		let location = round(random(-2,2));
+		let holeSize = round(random(2,4));
+		let height = round(random(1,3));
+				
+		let ob1Size = (platformWidth/2-holeSize/2+location/2), ob1Loc = (-platformWidth/2+ob1Size/2);
+		let ob2Size = (platformWidth/2-holeSize/2-location/2), ob2Loc = (platformWidth/2+location/2-ob1Size/2);
+		
+		obstacle(ob1Loc,0,z,ob1Size,height,1,(ob1Size > ob2Size ? false : true));
+		obstacle(ob2Loc,0,z,ob2Size,height,1,(ob2Size >= ob1Size ? false : true));
+	}
+}
+
+function gameCameraMove() {
 	if (view === "main") {
 		//perspective(80);
-		cam.lookAt(0, -mainOffset.y*blockSize,sideOffset.z*blockSize);
-		let velX = (mainOffset.x*blockSize-cam.eyeX)/10;
-		let velY = (-mainOffset.y*blockSize-cam.eyeY)/10;
-		let velZ = (mainOffset.z*blockSize-cam.eyeZ)/10;
+		gameCam.lookAt(0, -mainOffset.y*blockSize,sideOffset.z*blockSize);
+		let velX = (mainOffset.x*blockSize-gameCam.eyeX)/10;
+		let velY = (-mainOffset.y*blockSize-gameCam.eyeY)/10;
+		let velZ = (mainOffset.z*blockSize-gameCam.eyeZ)/10;
 		
-		if (dist(cam.eyeX,-cam.eyeY,cam.eyeZ,mainOffset.x*blockSize,mainOffset.y*blockSize,mainOffset.z*blockSize) > 0.1) {
-			cam.setPosition(cam.eyeX+velX,cam.eyeY+velY,cam.eyeZ+velZ);
+		if (dist(gameCam.eyeX,-gameCam.eyeY,gameCam.eyeZ,mainOffset.x*blockSize,mainOffset.y*blockSize,mainOffset.z*blockSize) > 0.1) {
+			gameCam.setPosition(gameCam.eyeX+velX,gameCam.eyeY+velY,gameCam.eyeZ+velZ);
 		} else {
-			cam.setPosition(mainOffset.x*blockSize,-mainOffset.y*blockSize,mainOffset.z*blockSize)
+			gameCam.setPosition(mainOffset.x*blockSize,-mainOffset.y*blockSize,mainOffset.z*blockSize)
 			transitioning = false;
 		}
 	} else {
 		//ortho();
-		cam.lookAt(0, -sideOffset.y*blockSize,sideOffset.z*blockSize);
-		let velX = (sideOffset.x*blockSize-cam.eyeX)/10;
-		let velY = (-sideOffset.y*blockSize-cam.eyeY)/10;
-		let velZ = (sideOffset.z*blockSize-cam.eyeZ)/10;
+		gameCam.lookAt(0, -sideOffset.y*blockSize,sideOffset.z*blockSize);
+		let velX = (sideOffset.x*blockSize-gameCam.eyeX)/10;
+		let velY = (-sideOffset.y*blockSize-gameCam.eyeY)/10;
+		let velZ = (sideOffset.z*blockSize-gameCam.eyeZ)/10;
 		
-		if (dist(cam.eyeX,-cam.eyeY,cam.eyeZ,sideOffset.x*blockSize,sideOffset.y*blockSize,sideOffset.z*blockSize) > 0.5) {
-			cam.setPosition(cam.eyeX+velX,cam.eyeY+velY,cam.eyeZ+velZ);
+		if (dist(gameCam.eyeX,-gameCam.eyeY,gameCam.eyeZ,sideOffset.x*blockSize,sideOffset.y*blockSize,sideOffset.z*blockSize) > 0.5) {
+			gameCam.setPosition(gameCam.eyeX+velX,gameCam.eyeY+velY,gameCam.eyeZ+velZ);
 		} else {
-			cam.setPosition(sideOffset.x*blockSize,-sideOffset.y*blockSize,sideOffset.z*blockSize)
+			gameCam.setPosition(sideOffset.x*blockSize,-sideOffset.y*blockSize,sideOffset.z*blockSize)
 			transitioning = false;
 		}
 		
@@ -133,6 +138,8 @@ function cameraMove() {
 }
 
 const slowSpeed = 0.04;
+const fastSpeed = 0.00015;
+const maxDif = 3;
 function difficulty() {
 		accelMax = baseAccelMax*difficultyMultiplier;
 		accelRate = accelMax/10;
@@ -140,8 +147,8 @@ function difficulty() {
  		jumpForce = baseJumpForce*(1+(difficultyMultiplier-1)/2);
 		obstacleSpeed = baseObstacleSpeed*difficultyMultiplier;
 		spawnRate = round(baseSpawnRate/difficultyMultiplier);
-	if (difficultyMultiplier < 2 && player != null) {
-		difficultyMultiplier+=0.0001;
+	if (difficultyMultiplier < maxDif && player != null) {
+		difficultyMultiplier+=fastSpeed;
 	} else {
 		if (player == null) {
 			if (difficultyMultiplier-slowSpeed > 0) {
@@ -172,7 +179,7 @@ function keyDownActions() {
 	if (abs(player.velX) < accelRate) {
 		player.velX = 0;
 	}
-	if (keyDown[4] && player.onGround) {
+	if ((keyDown[4] || keyDown[0] || mouseIsPressed) && player.onGround) {
 		player.velY = jumpForce;
 		player.onGround = false;
 		player.color = randomColor();
