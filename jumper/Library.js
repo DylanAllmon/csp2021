@@ -1,10 +1,16 @@
-function obstacle(x,y,z,w,h,d) {
-	count++;
+function obstacle(x,y,z,w,h,d,ignore) {
+	if (!ignore) {
+		count++;
+	}
 	obstacles.addRow();
 	obstacles.set(obstacles.getRowCount()-1,0,createVector(x*blockSize,y*blockSize,z*blockSize));
 	obstacles.set(obstacles.getRowCount()-1,1,createVector(w*blockSize,h*blockSize,d*blockSize));
-	obstacles.set(obstacles.getRowCount()-1,2,count);
-	obstacles.set(obstacles.getRowCount()-1,3,false);
+	if (!ignore) {
+		obstacles.set(obstacles.getRowCount()-1,2,count);
+	} else {
+		obstacles.set(obstacles.getRowCount()-1,2,-1);
+	}
+	obstacles.set(obstacles.getRowCount()-1,3, ignore);
 }
 
 function cube(size, textures /*top[0], bottom[1], north[2], south[3], east[4], west[5]*/, location, camera) {
@@ -78,12 +84,15 @@ function randomColor() {
 
 let hue = 0;
 const maxHue = 500;
-function bg() {
+function spectrum() {
 	hue++;
 	if (hue >= maxHue) {
 		hue = 0;
 	}
-	background(color(('hsl(' + floor(hue*(360/maxHue)) + ',100%,90%)')));
+}
+
+function backgroundProcesses() {
+	spectrum();
 }
 
 function collide1D(x1,x2,x3,x4) {
@@ -107,8 +116,4 @@ function collide3D(x1,y1,z1,w1,h1,d1,x2,y2,z2,w2,h2,d2) {
 		return true;
 	}
 	return false;
-}
-
-function seconds() {
-	return (millis()/1000);
 }
