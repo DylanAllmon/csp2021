@@ -70,7 +70,7 @@ function tickSecond() {
 function leveling() {
 	
 	if (ticks == spawnRate/2) {
-		randoilstacle(spawnZ);
+		randomObstacle(spawnZ);
 	}
 	if (ticks>=spawnRate) {
 		if (count == 0) {
