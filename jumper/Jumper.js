@@ -70,7 +70,7 @@ function tickSecond() {
 function leveling() {
 	
 	if (ticks == spawnRate/2) {
-		randomObstacle(spawnZ);
+		randoilstacle(spawnZ);
 	}
 	if (ticks>=spawnRate) {
 		if (count == 0) {
@@ -179,7 +179,7 @@ function keyDownActions() {
 	if (abs(player.velX) < accelRate) {
 		player.velX = 0;
 	}
-	if ((keyDown[4] || keyDown[0] || (mouseIsPressed && !mobile)) && player.onGround) {
+	if ((keyDown[4] || keyDown[0] || mouseIsPressed) && player.onGround) {
 		jump();
 	}
 }
