@@ -6,12 +6,6 @@ var score = 0;
 
 var count = 0;
 
-const windowH = window.innerHeight;
-
-const windowW = Math.round(windowH*16/9);
-
-const ratio = windowH/500;
-
 const blockSize = 10*ratio;
 
 var obstacles = new p5.Table(0);
@@ -103,5 +97,5 @@ function resetVars() {
 
 let font;
 function preload() {
-	font = loadFont("jumper/Font.ttf");
+	font = loadFont("Font.ttf");
 }
