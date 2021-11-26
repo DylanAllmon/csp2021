@@ -47,8 +47,6 @@ var transitioning = false;
 var cam;
 var distance;
 
-var username = "plsas";
-
 const playerZ = 0;
 var player = {
 	x:0,velX:0,
