@@ -7,8 +7,6 @@ const windowW = Math.round((window.innerHeight < window.innerWidth ? window.inne
 
 const ratio = windowH/500;
 
-var mobile = false;
-
 function setup() {
 	createCanvas(windowW, windowH, WEBGL);
 	textFont(font);
@@ -19,11 +17,6 @@ function setup() {
 	obstacles.addColumn();
 	obstacles.addColumn();
 	obstacles.addColumn();
-	if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
- 		mobile = true;
-		setShakeThreshold(3);
-	}
-	
 	switch (STATE.toLowerCase()) {
 		case ("menu"):
 			menuStart();
