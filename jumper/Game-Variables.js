@@ -1,7 +1,5 @@
 //Variables were taking up too much space.
 
-let txtr = null;
-
 var score = 0;
 
 var count = 0;
@@ -46,6 +44,8 @@ var transitioning = false;
 
 var cam;
 var distance;
+
+var username = "plsas";
 
 const playerZ = 0;
 var player = {
