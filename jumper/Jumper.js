@@ -179,7 +179,7 @@ function keyDownActions() {
 	if (abs(player.velX) < accelRate) {
 		player.velX = 0;
 	}
-	if ((keyDown[4] || keyDown[0] || mouseIsPressed) && player.onGround) {
+	if ((keyDown[4] || keyDown[0] || (mouseIsPressed && !mobile)) && player.onGround) {
 		jump();
 	}
 }
