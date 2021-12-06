@@ -1,5 +1,4 @@
 function menuStart() {
-	textSize(ratio*8);
 	menuTransition = false;
 	menuCam = createCamera();
 }
@@ -46,9 +45,18 @@ function menuRender() {
 		}
 	}
 	pop();
+	push();
 	fill(255);
+	textSize(ratio*8);
 	translate(0,0,38*blockSize);
 	text("Jumper", 0, 0);
+	pop();
+	push();
+	fill(255);
+	textSize(ratio*2);
+	translate(0,0,38*blockSize);
+	text("V2.3.2", -50*ratio, 28*ratio);
+	pop();
 }
 
 function mouseReleased() {
