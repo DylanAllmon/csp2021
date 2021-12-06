@@ -87,8 +87,11 @@ const spawnZ = 80;
 
 function randomObstacle(z) {
 	if (round(random(0,3)) > 0) {
-		let r = round(random(-1,1));
-		let e = round(random(2,5));
+		let r = round(random(-2,2));
+		if (r != 0) {
+			r = (r)/abs(r);
+		}
+		let e = round(random(3,6));
 		if (r == 0) {
 			e = round(random(4,5));
 		}
