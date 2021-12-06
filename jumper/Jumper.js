@@ -237,7 +237,7 @@ function keyPressed(event) {
 		setup();
 		return;
 	}
-  if (event.keyCode === 70) {
+  if (event.keyCode === 70 && STATE == "game") {
 		if (transitioning == false) {
     	transitioning = true;
 			if (view === "main") {
