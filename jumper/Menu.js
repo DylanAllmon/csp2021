@@ -26,7 +26,7 @@ function menuRender() {
 	let size;
 	if (!menuTransition) {
 		size = 35;
-		if (mouseIsPressed) {
+		if (mouseIsPressed || (keyIsDown(32))) {
 			size = 30;
 		}
 		fill(color(('hsl(' + floor((hue > maxHue/2 ? hue-maxHue/2 : hue+maxHue/2)*(360/maxHue)) + ',100%,30%)')));
@@ -53,6 +53,12 @@ function menuRender() {
 
 function mouseReleased() {
 	menuTransition = true;
+}
+
+function keyReleased(event) {
+	if (event.keyCode === 32) {
+		menuTransition = true;
+	}
 }
 
 
