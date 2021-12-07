@@ -58,7 +58,7 @@ function menuRender() {
 		fill(255);
 		textSize(ratio*2);
 		translate(0,0,38*blockSize);
-		text(Version, -50*ratio, 28*ratio);
+		text(Version + ";-;", -50*ratio, 28*ratio);
 		pop();
 	}
 }
