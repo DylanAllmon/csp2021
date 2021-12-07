@@ -1,3 +1,5 @@
+const openProcessing = false;
+
 //Variables were taking up too much space.
 
 var score = 0;
@@ -93,7 +95,16 @@ function resetVars() {
 	}
 }
 
-let font;
+let Helvetica = null;
 function preload() {
-	font = loadFont("jumper/Font.ttf");
+	if (openProcessing) {
+		Helvetica = loadFont("Font.ttf");
+	} else {
+		Helvetica = loadFont("jumper/Font.ttf");
+		Version = loadStrings("jumper/Version.txt")[0];
+	}
 }
+
+
+
+
