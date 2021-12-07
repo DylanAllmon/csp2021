@@ -101,7 +101,7 @@ function preload() {
 		Helvetica = loadFont("Font.ttf");
 	} else {
 		Helvetica = loadFont("jumper/Font.ttf");
-		Version = loadStrings("jumper/Version.txt");
+		loadStrings("jumper/Version.txt", function(result){Version=result[0]});
 	}
 }
 
