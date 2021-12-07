@@ -11,7 +11,7 @@ var mobile = false;
 
 function setup() {
 	createCanvas(windowW, windowH, WEBGL);
-	textFont(font);
+	textFont(Helvetica);
   textAlign(CENTER, CENTER);
 	angleMode(DEGREES);
 	noStroke();
