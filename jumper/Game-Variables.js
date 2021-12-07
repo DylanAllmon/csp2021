@@ -95,5 +95,5 @@ function resetVars() {
 
 let font;
 function preload() {
-	font = loadFont("Font.ttf");
+	font = loadFont("jumper/Font.ttf");
 }
