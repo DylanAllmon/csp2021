@@ -3,6 +3,8 @@ function menuStart() {
 	menuCam = createCamera();
 }
 
+var Version;
+
 let menuCam;
 
 let menuTransition = false;
@@ -51,12 +53,14 @@ function menuRender() {
 	translate(0,0,38*blockSize);
 	text("Jumper", 0, 0);
 	pop();
-	push();
-	fill(255);
-	textSize(ratio*2);
-	translate(0,0,38*blockSize);
-	text("V2.3.2", -50*ratio, 28*ratio);
-	pop();
+	if (Version != null) {
+		push();
+		fill(255);
+		textSize(ratio*2);
+		translate(0,0,38*blockSize);
+		text(Version, -50*ratio, 28*ratio);
+		pop();
+	}
 }
 
 function mouseReleased() {
