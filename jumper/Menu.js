@@ -3,7 +3,7 @@ function menuStart() {
 	menuCam = createCamera();
 }
 
-var Version;
+var Version = null;
 
 let menuCam;
 
@@ -27,7 +27,7 @@ function menuRender() {
 	let size;
 	if (!menuTransition) {
 		size = 35;
-		if (mouseIsPressed || (keyIsDown(32))) {
+		if ((mouseIsPressed && mouseOnScreen()) || (keyIsDown(32))) {
 			size = 30;
 		}
 		fill(color(('hsl(' + floor((hue > maxHue/2 ? hue-maxHue/2 : hue+maxHue/2)*(360/maxHue)) + ',100%,30%)')));
@@ -58,13 +58,15 @@ function menuRender() {
 		fill(255);
 		textSize(ratio*2);
 		translate(0,0,38*blockSize);
-		text(Version+"", -50*ratio, 28*ratio);
+		text(Version, -50*ratio, 28*ratio);
 		pop();
 	}
 }
 
 function mouseReleased() {
-	menuTransition = true;
+	if (mouseOnScreen()) {
+		menuTransition = true;
+	}
 }
 
 function keyReleased(event) {
