@@ -27,7 +27,8 @@ function renderPlatform() {
 
 function renderObstacles() {
 	push();
-	fill(255,0,0);
+	//fill(255,0,0);
+	fill(color(('hsl(' + floor(hue*(360/maxHue)) + ',100%,30%)')));
 	for (let i = 0; i < obstacles.getRowCount(); i++) {
 		let loc = obstacles.get(i,0);
 		if (loc != null) {
