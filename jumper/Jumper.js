@@ -95,7 +95,7 @@ function randomObstacle(z) {
 		if (r == 0) {
 			e = round(random(4,5));
 		}
-		obstacle((r*4+(-r)*(e/2)),0,z,e,round(random(1,3)),1,false);
+		obstacle((r*4+(-r)*(e/2)),0,z,e,round(round(random(2,6)/2)),1,false);
 	} else {
 		let location = round(random(-2,2));
 		let holeSize = round(random(2,4));
