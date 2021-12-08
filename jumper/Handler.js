@@ -1,9 +1,9 @@
 const StartState = "menu"; // game or menu
 var STATE = StartState;
 
-const windowH = Math.round((window.innerHeight < window.innerWidth ? window.innerHeight : window.innerWidth*9/16));
+const windowH = Math.round((window.innerHeight*16/9 < window.innerWidth ? window.innerHeight : window.innerWidth*9/16));
 
-const windowW = Math.round((window.innerHeight < window.innerWidth ? window.innerHeight*16/9 : window.innerWidth));
+const windowW = Math.round((window.innerHeight*16/9 < window.innerWidth ? window.innerHeight*16/9 : window.innerWidth));
 
 const ratio = windowH/500;
 
@@ -54,4 +54,13 @@ function switchState(st) {
 			gameStart();
 			break
 	}
+}
+
+function mouseOnScreen() {
+	if (mouseX >=0 && mouseX <= canvas.width) {
+		if (mouseY >=0 && mouseY <= canvas.height) {
+			return true;
+		}
+	}
+	return false;
 }
