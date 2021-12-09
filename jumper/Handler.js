@@ -10,7 +10,6 @@ const ratio = windowH/500;
 var mobile = false;
 
 function setup() {
-	//document.getElementById("Form").style.color = "rgb(0,255,0)";
 	createCanvas(windowW, windowH, WEBGL);
 	textFont(Helvetica);
   textAlign(CENTER, CENTER);
