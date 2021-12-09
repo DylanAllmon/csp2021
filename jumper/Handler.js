@@ -10,6 +10,7 @@ const ratio = windowH/500;
 var mobile = false;
 
 function setup() {
+	document.getElementById("Form").style.color = "rgb(0,255,0)";
 	createCanvas(windowW, windowH, WEBGL);
 	textFont(Helvetica);
   textAlign(CENTER, CENTER);
@@ -37,7 +38,7 @@ function setup() {
 function draw() {
 	if (!openProcessing) {
 		let col = color(color("hsl(' + floor(hue*(360/maxHue)) + ',100%,30%)").levels);
-		document.getElementById("Form").style.color = "rgb(" + col.red() + "," + col.green() + "," + col.blue() + ")";
+		//document.getElementById("Form").style.color = "rgb(" + col.red() + "," + col.green() + "," + col.blue() + ")";
 	}
 	backgroundProcesses();
 	if (STATE.toLowerCase() == "menu") {
