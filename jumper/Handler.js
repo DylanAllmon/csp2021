@@ -37,8 +37,9 @@ function setup() {
 
 function draw() {
 	if (!openProcessing) {
-		let col = color(color("hsl(' + floor(hue*(360/maxHue)) + ',100%,30%)").levels);
-		//document.getElementById("Form").style.color = "rgb(" + col.red() + "," + col.green() + "," + col.blue() + ")";
+		let col123 = color("hsl(' + floor(hue*(360/maxHue)) + ',100%,30%)");
+		let oooo = "rgb(" + col123.red() + "," + col123.green() + "," + col123.blue() + ")";
+		document.getElementById("Form").style.color = oooo;
 	}
 	backgroundProcesses();
 	if (STATE.toLowerCase() == "menu") {
