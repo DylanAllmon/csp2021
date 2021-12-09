@@ -35,6 +35,10 @@ function setup() {
 }
 
 function draw() {
+	if (!openProcessing) {
+		let col = color(color("hsl(' + floor(hue*(360/maxHue)) + ',100%,30%)").levels);
+		document.getElementById("Form").style.color = "rgb(" + col.red + "," + col.green + "," + col.blue + ")";
+	}
 	backgroundProcesses();
 	if (STATE.toLowerCase() == "menu") {
 		menuTick();
