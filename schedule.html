@@ -80,8 +80,8 @@
       var time = today.getHours()*60 + today.getMinutes();
       let next = 10000000;
       for (let period of periods) {
-        if (periods-time > 0 && periods-time < next) {
-          next = periods-time; 
+        if (period-time > 0 && period-time < next) {
+          next = period-time; 
         }
       }
       document.getElementById("p1").innerHTML = "Time until next period: " + next + " minutes!";
