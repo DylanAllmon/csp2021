@@ -73,6 +73,19 @@
         <td>1:00-1:50</td>
       </tr>
     </table>
+    <p id="p1">Time until next period: </p>
+    <script>
+      var periods = [440, 495, 550, 580, 635, 690, 725, 780]
+      var today = new Date();
+      var time = today.getHours()*60 + today.getMinutes();
+      let next = 10000000;
+      for (let period of periods) {
+        if (periods-time > 0 && periods-time < next) {
+          next = periods-time; 
+        }
+      }
+      document.getElementById("p1").innerHTML = "Time until next period: " + next + " minutes!";
+    </script>
     <div>
       <iframe src="Regular Schedule.pdf"width="49.5%" height="139%"></iframe>
       <iframe src="Early Dismissal Schedule.pdf" width="49.5%" height="139%"></iframe>
