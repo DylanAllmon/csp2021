@@ -20,10 +20,23 @@
         padding: 8px;
       }
       
-      .container {
-        position: relative;
-        width: 100%;
-        overflow: hidden;
+      div {
+      	position: absolute;
+        left:0;
+        width: 120%;
+        margin: 0;
+        border:none;
+        padding: 0;
+        display: flex;
+      }
+      
+      .pdf {
+      	background-color:blue;
+        width: 50vw;
+        height: 72vw;
+        margin: 0;
+        border:none;
+        padding: 0;
       }
      </style>
     <table border=2px>
@@ -75,8 +88,8 @@
     </table>
     <h1 id="time">Time until next period: </h1>
     <div>
-      <iframe src="Regular Schedule.pdf"width="49.5%" height="139%"></iframe>
-      <iframe src="Early Dismissal Schedule.pdf" width="49.5%" height="139%"></iframe>
+      <iframe src="Regular Schedule.pdf" class="pdf"></iframe>
+      <iframe src="Early Dismissal Schedule.pdf" class="pdf"></iframe>
     </div>
     
     <script>
