@@ -10,6 +10,10 @@ const dict = {
   "white": "⬜"
 }
 
+var speed = 1000;
+
+const maxSpeed = speed/2;
+
 const background = "black"
 
 const rowCount = 20;
@@ -26,7 +30,7 @@ var to;
 
 
 function start() {
-  grid = []//new Array(rowCount * columnCount).fill(new slot());
+  grid = [] //new Array(rowCount * columnCount).fill(new slot());
   for (let i = 0; i < rowCount * columnCount; i++) {
     grid[i] = new slot();
   }
@@ -35,8 +39,9 @@ function start() {
   running = true;
   place = null;
   hold = null;
+  document.querySelector('#hold').innerHTML = ''
   next = null;
-  moveDelay = 60;
+  //reRender()
 
   spawn();
 
@@ -78,7 +83,7 @@ function resetTO() {
     clearTimeout(to)
   }
   if (running) {
-    to = setTimeout(tick, 1000);
+    to = setTimeout(tick, speed);
   }
 }
 
@@ -153,7 +158,6 @@ function shape(rng) {
       }
     }
     check(this.squares);
-    moveTimer = moveDelay;
     spawn();
   };
 
@@ -243,40 +247,40 @@ function drawShape(shap, colorOverride) {
 }
 
 function newNext() {
-	document.querySelector('#next').innerHTML = "";
+  document.querySelector('#next').innerHTML = "";
   for (let i = 0; i < nextCount; i++) {
-  var li = document.createElement("li");
-  var p = document.createElement("p");
-  p.innerHTML = addStationary(next[i]);
-  li.appendChild(p);
-  document.querySelector('#next').appendChild(li);
+    var li = document.createElement("li");
+    var p = document.createElement("p");
+    p.innerHTML = addStationary(next[i]);
+    li.appendChild(p);
+    document.querySelector('#next').appendChild(li);
   }
 }
 
 function addStationary(shap, colorOverride) {
-  
-  yes = new Array(getColumns(shap)*(getRows(shap))).fill(dict.white);
-  
+
+  yes = new Array(getColumns(shap) * (getRows(shap))).fill(dict.white);
+
   soffset = 0;
-  
+
   for (let x of shap.squares) {
-  	if (x.x < soffset) {
-    	soffset = x.x;
+    if (x.x < soffset) {
+      soffset = x.x;
     }
   }
-  
+
   yoffset = 0;
-  
+
   for (let x of shap.squares) {
-  	if (x.y < yoffset) {
-    	yoffset = x.y;
+    if (x.y < yoffset) {
+      yoffset = x.y;
     }
   }
-    
+
   for (let x of shap.squares) {
-      yes[(x.y-yoffset)*getColumns(shap)+(x.x-soffset)] = dict[shap.col]
+    yes[(x.y - yoffset) * getColumns(shap) + (x.x - soffset)] = dict[shap.col]
   }
-  
+
   let txt = ""
   y = 0;
   for (let x of yes) {
@@ -286,29 +290,29 @@ function addStationary(shap, colorOverride) {
     txt = txt + x
     y++
   }
-  
+
   const invis = '<span style="opacity:0">' + dict.white + '</span>'
-  
+
   txt = txt.replaceAll(dict.white, invis)
-  
+
   return txt;
 }
 
 function getColumns(shap) {
-let ret = []
-	for (let x of shap.squares) {
-  	if (!ret.includes(x.x)) {
-    	ret.push(x.x)
+  let ret = []
+  for (let x of shap.squares) {
+    if (!ret.includes(x.x)) {
+      ret.push(x.x)
     }
   }
   return ret.length
 }
 
 function getRows(shap) {
-let ret = []
-	for (let x of shap.squares) {
-  	if (!ret.includes(x.y)) {
-    	ret.push(x.y)
+  let ret = []
+  for (let x of shap.squares) {
+    if (!ret.includes(x.y)) {
+      ret.push(x.y)
     }
   }
   return ret.length
@@ -343,7 +347,7 @@ function get() {
 }
 
 document.addEventListener('keydown', function(event) {
-
+	if (running) {
   switch (event.key) {
     case "r":
     case "w":
@@ -374,6 +378,9 @@ document.addEventListener('keydown', function(event) {
       swapHold();
       reRender()
       break;
+      }
+  } else {
+  	start();
   }
 });
 
@@ -474,8 +481,8 @@ function allTheWay() {
 }
 
 function clearRow(row) {
-  if (moveDelay > 16) {
-    moveDelay -= 2;
+  if (speed > maxSpeed) {
+  	speed-=10;
   }
   score++;
   for (let i = (row) * (columnCount); i < (row + 1) * (columnCount); i++) {
