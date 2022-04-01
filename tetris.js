@@ -10,9 +10,11 @@ const dict = {
   "white": "⬜"
 }
 
-var speed = 1000;
+const startSpeed = 1000;
 
-const maxSpeed = speed/4;
+var speed = startSpeed;
+
+const maxSpeed = startSpeed/4;
 
 const background = "black"
 
@@ -41,6 +43,7 @@ function start() {
   hold = null;
   document.querySelector('#hold').innerHTML = ''
   next = null;
+  speed = startSpeed;
   //reRender()
 
   spawn();
