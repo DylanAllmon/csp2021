@@ -12,7 +12,7 @@ const dict = {
 
 var speed = 1000;
 
-const maxSpeed = speed/2;
+const maxSpeed = speed/4;
 
 const background = "black"
 
@@ -45,6 +45,7 @@ function start() {
 
   spawn();
 
+  up();
   tick()
 }
 
@@ -111,13 +112,13 @@ function shape(rng) {
   this.rot = 0;
 
   this.check = function() {
-    for (let i of this.squares) {
-      if ((this.y + i.y + 1) >= rowCount || (getSquare(this.x + i.x, this.y + i.y + 1) != null && getSquare(this.x + i.x, this.y + i.y + 1).color != null)) {
-        return true;
-      }
-    }
-    return false;
-  };
+		for (let i of this.squares) {
+			if (!squareIsEmpty(this.x+i.x,this.y+i.y+1, false)) {
+				return true;
+			}
+		}
+		return false;
+	};
 
   if (this.check()) {
     end();
@@ -133,23 +134,26 @@ function shape(rng) {
     return true;
   };
 
-  this.rotate = function() {
-    for (let i of this.squares) {
-      if (getSquare(this.x - i.y, this.y + i.x) != null && getSquare(this.x - i.y, this.y + i.x).color != null) {
-        return;
-      }
-    }
-    if (this.id != 3) {
-      for (let i of this.squares) {
-        let x = i.x;
-        let y = i.y;
-
-        i.x = -y;
-        i.y = x;
-      }
-      contain(this);
-    }
+  this.up = function() {
+    this.y--;
+    return true;
   };
+
+  this.rotate = function() {
+		for (let i of this.squares) {
+			if (!squareIsEmpty(this.x-i.y, this.y+i.x, false) || this.id == 3) {
+				return;
+			}
+		}
+		for (let i of this.squares) {
+			let x = i.x;
+			let y = i.y;
+
+			i.x = -y;
+			i.y = x;
+		}
+		contain(this);
+	};
 
   this.place = function() {
     for (let i of this.squares) {
@@ -162,22 +166,26 @@ function shape(rng) {
   };
 
   this.left = function() {
-    for (let i of this.squares) {
-      if (this.x + i.x - 1 >= columnCount || this.x + i.x - 1 < 0 || (this.y + i.y > 0 && getSquare(this.x + i.x - 1, this.y + i.y).color != null)) {
-        return;
-      }
-    }
-    this.x--;
-  };
+		for (let i of this.squares) {
+			if (!squareIsEmpty(this.x+i.x-1,this.y+i.y,true)) {
+				return;
+			}
+		}
+		this.x--;
+	};
 
   this.right = function() {
-    for (let i of this.squares) {
-      if (this.x + i.x + 1 >= columnCount || this.x + i.x + 1 < 0 || (this.y + i.y > 0 && getSquare(this.x + i.x + 1, this.y + i.y).color != null)) {
-        return;
-      }
-    }
-    this.x++;
-  };
+		for (let i of this.squares) {
+			if (!squareIsEmpty(this.x+i.x+1,this.y+i.y,true)) {
+				return;
+			}
+		}
+		this.x++;
+	};
+}
+
+function squareIsEmpty(x,y, includeX) {
+	return !((getSquare(x, y) != null && getSquare(x, y).color != null) || y > rowCount-1 || (includeX && (x < 0 || x > columnCount-1)));
 }
 
 function gen(seed, shape) {
@@ -234,6 +242,10 @@ function down() {
     return false;
   }
   return true;
+}
+
+function up() {
+  place.up()
 }
 
 function drawShape(shap, colorOverride) {
@@ -482,7 +494,7 @@ function allTheWay() {
 
 function clearRow(row) {
   if (speed > maxSpeed) {
-  	speed-=10;
+  	speed-=15;
   }
   score++;
   for (let i = (row) * (columnCount); i < (row + 1) * (columnCount); i++) {
