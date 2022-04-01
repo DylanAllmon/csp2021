@@ -10,13 +10,20 @@ const dict = {
   "white": "⬜"
 }
 
+const opposites = {
+  "white": "black",
+  "black": "white"
+}
+
 const startSpeed = 1000;
 
 var speed = startSpeed;
 
 const maxSpeed = startSpeed/4;
 
-const background = "black"
+darkMode = true
+
+var background = "black"
 
 const rowCount = 20;
 var grid = [];
@@ -32,7 +39,10 @@ var to;
 
 
 function start() {
-  grid = [] //new Array(rowCount * columnCount).fill(new slot());
+
+  darkMode = (localStorage.getItem("darkMode") === 'true') ?? true
+
+  grid = []
   for (let i = 0; i < rowCount * columnCount; i++) {
     grid[i] = new slot();
   }
@@ -47,9 +57,12 @@ function start() {
   //reRender()
 
   spawn();
+  
 
   up();
-  tick()
+  tick();
+
+  updateTheme();
 }
 
 document.onload = start();
@@ -337,7 +350,7 @@ function drawPreview(xs) {
   let shap = Object.assign({}, place);
   while (true) {
     if (shap.check()) {
-      drawShape(shap, "white")
+      drawShape(shap, opposites[background])
       return
     }
     shap.down()
@@ -528,4 +541,26 @@ function swapHold() {
     contain(place);
   }
   document.querySelector('#hold').innerHTML = addStationary(hold);
+}
+
+function updateTheme() {
+  localStorage.setItem("darkMode", darkMode)
+  if (darkMode == true) {
+    console.log("DARK MODE")
+    background = "black"
+    document.querySelector('body').style.backgroundColor = "#18222d"
+    document.querySelector('body').style.color = "#fcbe24"
+  } else {
+    console.log("LIGHT MODE")
+    document.querySelector('body').style.backgroundColor = "#d6e0eb"
+    document.querySelector('body').style.color = "#18222d"
+    background = "white"
+  }
+  reRender()
+}
+
+function toggleDarkMode() {
+  darkMode=!darkMode
+  updateTheme()
+  document.activeElement.blur();
 }
