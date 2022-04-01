@@ -45,7 +45,7 @@ h1#nextLabel {
   position: absolute;
   top: 5%;
   left: 75%;
-  transform: translate(-105%, -50%);
+  transform: translate(-105%, -0%);
 }
 
 body ul#next {
