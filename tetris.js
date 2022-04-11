@@ -39,8 +39,7 @@ var to;
 
 
 function start() {
-
-  darkMode = (localStorage.getItem("darkMode") === 'true') ?? true
+  darkMode = (localStorage.getItem("darkMode") === 'true')
 
   grid = []
   for (let i = 0; i < rowCount * columnCount; i++) {
@@ -63,9 +62,62 @@ function start() {
   tick();
 
   updateTheme();
+
+  resize();
 }
 
 document.onload = start();
+window.onresize = resize;
+
+function resize() {
+  //if (window.innerWidth/window.innerHeight > columnCount/rowCount) {
+  
+  	document.querySelector("body").style.fontSize = "4.3vh"
+    
+    document.querySelector("#hold").style.fontSize = "4vh"
+    
+    document.querySelectorAll("#next li p").forEach(e => e.style.fontSize = "4vh")
+  
+  	document.querySelector("#main").style.top = "5%"
+
+  	document.querySelector("#main").style.fontSize = "3.3vh";
+    
+    if (window.innerWidth/window.innerHeight < 3/2) {
+			console.log("small")
+      
+      document.querySelector("body").style.fontSize = "3.2vw"
+      document.querySelector("#hold").style.fontSize = "2.5vw"
+      document.querySelectorAll("#next li p").forEach(e => e.style.fontSize = "2.5vw")
+
+  		document.querySelector("#main").style.fontSize = "2.3vw";
+		}    
+    
+    var loc = ((window.innerWidth-getWidth(dict.black.repeat(columnCount),getFont(document.querySelector("#main"))))/4)
+
+    var nextSize = getWidth(dict.black,getFont(document.querySelector("#next")))
+
+    document.querySelector("#holdLabel").style.left = (loc+nextSize/2) + "px"
+    document.querySelector("#hold").style.left = (loc+nextSize/2) + "px"
+
+    document.querySelector("#nextLabel").style.left = (window.innerWidth-loc+nextSize/2) + "px"
+  	document.querySelector("#next").style.left = (window.innerWidth-loc+nextSize/2) + "px"
+    
+  // } else {
+  //   console.log("tiny")
+  //   document.querySelector("#main").style.fontSize = "7vw";
+  //   document.querySelector("#main").style.top = (window.innerWidth-getWidth(dict.black.repeat(columnCount),getFont(document.querySelector("#main"))))/2.5 + "px"
+  // }
+}
+
+function getWidth(text, font) {
+	const context = document.createElement("canvas").getContext("2d");  
+  context.font = font;  
+  return context.measureText(text).width;
+}
+
+function getFont(element) {
+    return window.getComputedStyle(element, null).getPropertyValue("font");
+}
 
 function tick() {
   draw = []
@@ -283,6 +335,8 @@ function newNext() {
     li.appendChild(p);
     document.querySelector('#next').appendChild(li);
   }
+
+  resize()
 }
 
 function addStationary(shap, colorOverride) {
@@ -546,12 +600,10 @@ function swapHold() {
 function updateTheme() {
   localStorage.setItem("darkMode", darkMode)
   if (darkMode == true) {
-    console.log("DARK MODE")
     background = "black"
     document.querySelector('body').style.backgroundColor = "#18222d"
     document.querySelector('body').style.color = "#fcbe24"
   } else {
-    console.log("LIGHT MODE")
     document.querySelector('body').style.backgroundColor = "#d6e0eb"
     document.querySelector('body').style.color = "#18222d"
     background = "white"

@@ -9,20 +9,22 @@ body {
 
 * {
   margin: 0;
-  padding:0;
+  padding: 0;
 }
 
-body p#main {
-  position: absolute;
+p {
   font-size: 3.3vh;
+}
+
+p#main {
+  position: absolute;
   top: 5%;
   left: 50%;
   transform: translate(-50%, 0);
 }
 
-body p#hold {
+p#hold {
   position: absolute;
-  font-size: 3.3vh;
   top: 25%;
   left: 20%;
   transform: translate(5%, -50%);
@@ -48,25 +50,32 @@ h1#nextLabel {
   transform: translate(-105%, -0%);
 }
 
-body ul#next {
+ul#next {
   position: absolute;
   display: block;
-  font-size: 3.3vh;
   top: 5%;
   left: 75%;
   transform: translate(5%, 0%);
   list-style-type: none;
 }
 
-body ul#next li {
+ul#next li {
   margin: 15% 0;
+  white-space: nowrap;
+}
+
+ul#next li p {
+  font-size: 4vh;
 }
 
 button#darkButton {
   background-color: #7f7f7f;
   border: none;
-  height:10vh;
-  width:10vh;
+  height: 10vh;
+  width: 10vh;
+  bottom: 0px;
+  right: 0px;
+  position: absolute;
   text-align: center;
   font-size: 16px;
   padding: 0;
@@ -74,16 +83,16 @@ button#darkButton {
   cursor: pointer;
   border-radius: 8px;
   transition-duration: 0.4s;
-  box-shadow: 0 4px 6px 0 rgba(0,0,0,0.24), 0 4px 12px 0 rgba(0,0,0,0.19);
+  box-shadow: -4px -4px 6px 0 rgba(0, 0, 0, 0.24), -4px -4px 12px 0 rgba(0, 0, 0, 0.19);
 }
 
 button#darkButton:hover {
   background-color: #979797;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  box-shadow: -12px -12px 16px 0 rgba(0, 0, 0, 0.24), -17px -17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 button#darkButton:active {
 	transition-duration: 0.01s;
-  box-shadow: 0 12px 8px 0 rgba(0,0,0,0.24), 0 17px 20px 0 rgba(0,0,0,0.19);
-  transform: translateY(2px);
+  box-shadow: -12px -12px 8px 0 rgba(0, 0, 0, 0.24), -17px -17px 20px 0 rgba(0, 0, 0, 0.19);
+  transform: translateY(-2px);
 }
