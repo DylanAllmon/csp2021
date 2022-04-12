@@ -123,9 +123,6 @@ function tick() {
   draw = []
 
   down();
-
-  document.querySelector('#score').innerHTML = "Score: " + score;
-
   reRender()
 }
 
@@ -145,6 +142,8 @@ function reRender() {
     drawShape(place, null)
   }
   document.querySelector('#main').innerHTML = get()
+  
+  document.querySelector('#score').innerHTML = "Score: " + score;
 }
 
 function resetTO() {
