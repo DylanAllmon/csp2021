@@ -577,6 +577,7 @@ function clearRow(row) {
       }
     }
   }
+  reRender();
 }
 
 function swapHold() {
