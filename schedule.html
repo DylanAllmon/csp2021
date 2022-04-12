@@ -97,13 +97,18 @@
       function clock() {
         var today = new Date();
         var time = today.getHours()*60 + today.getMinutes();
-        let next = 10000000;
+        let next = Infinity;
         for (let period of periods) {
           if (period-time > 0 && period-time < next) {
             next = period-time; 
           }
         }
-        document.getElementById("time").innerHTML = "Time until next period: " + next + " minutes!";
+        if (next === Infinity) {
+          document.getElementById("time").innerHTML = "All done for today!";
+        } else {
+          document.getElementById("time").innerHTML = "Time until next period: " + next + " minutes!"; 
+        }
+        
         setTimeout(clock, 1000);
       }
     </script>
